@@ -197,7 +197,8 @@ PRODUCT_PACKAGES += \
     WifiOverlayGalaga
 
 PRODUCT_PACKAGES += \
-    LineageApertureOverlayGalaga
+    LineageApertureOverlayGalaga \
+    LineageDialerGalaga
 
 # Power
 PRODUCT_PACKAGES += \
