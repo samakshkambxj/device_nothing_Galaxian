@@ -18,6 +18,9 @@ on init
 
     # sched
     write /proc/sys/kernel/sched_migration_cost_ns 250000
+    write /proc/sys/kernel/sched_latency_ns 5000000
+    write /proc/sys/kernel/sched_min_granularity_ns 500000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 2500000
 
     # Boot time tuning
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
