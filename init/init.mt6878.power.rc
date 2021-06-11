@@ -16,6 +16,10 @@ on init
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_background_ratio 10
 
+    # memory reserve tuning
+    write /proc/sys/vm/min_free_kbytes 27386
+    write /proc/sys/vm/lowmem_reserve_ratio "0 0 0"
+
     # sched
     write /proc/sys/kernel/sched_migration_cost_ns 250000
     write /proc/sys/kernel/sched_latency_ns 5000000
