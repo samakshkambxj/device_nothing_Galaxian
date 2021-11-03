@@ -757,7 +757,6 @@ on zygote-start
 
 on early-boot
     write /proc/bootprof "INIT:early-boot"
-    verity_update_state
 
     chown root log /proc/ccci_sib
     chown root system /proc/ccci_dump
