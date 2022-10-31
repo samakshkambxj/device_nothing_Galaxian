@@ -196,6 +196,9 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlayGalaga \
     WifiOverlayGalaga
 
+PRODUCT_PACKAGES += \
+    LineageApertureOverlayGalaga
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr \
