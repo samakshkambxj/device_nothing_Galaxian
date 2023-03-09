@@ -23,6 +23,9 @@ on init
     # disable khugepaged
     write /sys/kernel/mm/transparent_hugepage/enabled "never"
 
+    # Disable multiple kswapd threads
+    write /proc/sys/vm/kswapd_threads 1
+
     # sched
     write /proc/sys/kernel/sched_migration_cost_ns 250000
     write /proc/sys/kernel/sched_latency_ns 5000000
