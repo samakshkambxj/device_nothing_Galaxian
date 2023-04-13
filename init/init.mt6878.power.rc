@@ -55,6 +55,9 @@ on init
     write /dev/cpuctl/top-app/cpu.uclamp.max max
     write /dev/cpuctl/top-app/cpu.shares 20480
 
+    # Adjust watermark level
+    write /proc/sys/vm/watermark_scale_factor 200
+
 service vendor.gralloc-v2 /vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
     class hal animation
     user system
