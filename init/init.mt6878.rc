@@ -14,6 +14,10 @@ on early-init
     # initialize vendor.all.modules.ready to 1 here to prevent NOT GKI project blocked
     setprop vendor.all.modules.ready 1
 
+on early-boot
+    # set RLIMIT_MEMLOCK to 64KB
+    setrlimit 8 65536 65536
+
 # Keep debugfs mounted in non-user builds
 on early-init && property:ro.build.type=eng
     mount debugfs debugfs /sys/kernel/debug
