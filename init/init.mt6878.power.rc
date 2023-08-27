@@ -8,8 +8,13 @@ on init
     setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,6
     setprop dalvik.vm.dex2oat-threads 6
 
+    # fs
+    write /dev/sys/fs/by-name/userdata/cp_interval 6000
+    write /dev/sys/fs/by-name/userdata/gc_urgent_sleep_time 200
+
     # VM
     write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 10
 
     # Boot time tuning
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
