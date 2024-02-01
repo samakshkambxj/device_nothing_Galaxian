@@ -20,8 +20,8 @@ on init
     write /proc/sys/vm/min_free_kbytes 27386
     write /proc/sys/vm/lowmem_reserve_ratio "0 0 0"
 
-    # khugepaged tuning
-    write /sys/kernel/mm/transparent_hugepage/khugepaged/scan_sleep_millisecs 60000
+    # disable khugepaged
+    write /sys/kernel/mm/transparent_hugepage/enabled "never"
 
     # sched
     write /proc/sys/kernel/sched_migration_cost_ns 250000
