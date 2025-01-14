@@ -35,6 +35,7 @@ on init
     # Boot time tuning
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "performance"
+    write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 0
 
     # Set teo as cpu idle governor
     write /sys/devices/system/cpu/cpuidle/current_governor teo
@@ -106,6 +107,7 @@ on property:sys.boot_completed=1
     # End boot time tuning
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "schedutil"
+    write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 0
 
 service vendor.gralloc-v2 /vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
     class hal animation
