@@ -203,6 +203,30 @@
       "Value": "9999999"
     },
     {
+      "PowerHint": "GAME",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 0,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 0,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "GpuPwrLevel",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "MemFreq",
+      "Duration": 0,
+      "Value": "9999999999"
+    },
+    {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GpuPwrLevel",
       "Duration": 0,
