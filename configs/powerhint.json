@@ -260,6 +260,11 @@
       "Value": "9999999999"
     },
     {
+      "PowerHint": "GAME",
+      "Type": "EndHint",
+      "Value": "INTERACTION"
+    },
+    {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "PowerHALRenderingState",
       "Duration": 0,
