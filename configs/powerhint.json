@@ -158,6 +158,18 @@
       "ResetOnInit": true
     },
     {
+      "Name": "GPUBlockBoost",
+      "Path": "/sys/kernel/ged/hal/gpu_boost_level",
+      "Values": [
+        "101",
+        "50",
+        "0",
+        "-1"
+      ],
+      "ResetOnInit": true,
+      "DefaultIndex": 2
+    },
+    {
       "Name": "MemFreq",
       "Path": "/sys/devices/platform/soc/1c00f000.dvfsrc/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq",
       "Values": [
@@ -169,6 +181,15 @@
         "754000000"
       ],
       "ResetOnInit": true
+    },
+    {
+      "Name": "PowerHALRenderingState",
+      "Path": "vendor.powerhal.rendering",
+      "Values": [
+        "EXPENSIVE_RENDERING",
+        ""
+      ],
+      "Type": "Property"
     }
   ],
   "Actions": [
@@ -240,9 +261,27 @@
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "PowerHALRenderingState",
+      "Duration": 0,
+      "Value": "EXPENSIVE_RENDERING"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 0,
+      "Value": "2000000"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GpuPwrLevel",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "GPUBlockBoost",
+      "Duration": 0,
+      "Value": "50"
     }
   ]
 }
