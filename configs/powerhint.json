@@ -183,6 +183,12 @@
       "Node": "CPUBigClusterMinFreq",
       "Duration": 0,
       "Value": "1500000"
-    }
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "GpuPwrLevel",
+      "Duration": 0,
+      "Value": "30"
+    },
   ]
 }
