@@ -198,9 +198,6 @@ vendor/lib64/libbt-vendor.so
 
 # Bluetooth (Firmware)
 vendor/firmware/BT_FW.cfg
-vendor/firmware/soc7_0_ram_bt_1_1_hdr.bin
-vendor/firmware/soc7_0_ram_bt_1a_1_hdr.bin
-vendor/firmware/soc7_0_ram_bt_1b_1_hdr.bin
 
 # Chipset info
 vendor/bin/chipinfo
@@ -214,9 +211,6 @@ vendor/etc/init/hw/init_conninfra.rc
 vendor/etc/init/init.connfem.rc
 vendor/firmware/connfem.cfg
 vendor/firmware/conninfra.cfg
-vendor/firmware/soc7_0_ram_mcu_1_1_hdr.bin
-vendor/firmware/soc7_0_ram_mcu_1a_1_hdr.bin
-vendor/firmware/soc7_0_ram_mcu_1b_1_hdr.bin
 vendor/lib64/libconnfem.so
 
 # Camera
