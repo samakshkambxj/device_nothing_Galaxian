@@ -5,6 +5,7 @@ import /vendor/etc/init/hw/init.mt6878.power.rc
 import /vendor/etc/init/hw/init.mt6878.usb.rc
 import /vendor/etc/init/hw/init.project.rc
 import /vendor/etc/init/hw/init.sensor_2_0.rc
+import /vendor/etc/init/hw/init.zram.rc
 import /vendor/etc/init/hw/init.board_id.rc
 import /vendor/etc/init/hw/init.modem.rc
 
