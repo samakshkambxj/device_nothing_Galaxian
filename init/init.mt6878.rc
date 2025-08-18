@@ -1055,27 +1055,6 @@ on boot
     chown system radio /dev/ttyGS1
 #Power Manager
     write /sys/power/pm_freeze_timeout 2000
-#NT core
-    chmod 550 /proc/nt_meminfo/
-    chown system system /proc/nt_meminfo/
-    chmod 550 /proc/nt_meminfo/show_all_dmabuf
-    chown system system /proc/nt_meminfo/show_all_dmabuf
-    chmod 550 /proc/nt_meminfo/show_all_tasks
-    chown system system /proc/nt_meminfo/show_all_tasks
-    chmod 550 /proc/nt_meminfo/show_all_task_dma
-    chown system system /proc/nt_meminfo/show_all_task_dma
-    chmod 550 /proc/nt_disk/
-    chown system system /proc/nt_disk/
-    chmod 550 /proc/nt_disk/get_data_usage
-    chown system system /proc/nt_disk/get_data_usage
-    chmod 550 /proc/nt_taskinfo/
-    chown system system /proc/nt_taskinfo/
-    chmod 550 /proc/nt_taskinfo/show_all_tasks_id
-    chown system system /proc/nt_taskinfo/show_all_tasks_id
-    chmod 550 /proc/nt_value_check/
-    chown system system /proc/nt_value_check/
-    chmod 770 /proc/nt_value_check/value_check_node
-    chown system system /proc/nt_value_check/value_check_node
 #NT CHG   
 on property:sys.UiBatteryLevel=*
     write proc/charger/ui_soc ${sys.UiBatteryLevel}
