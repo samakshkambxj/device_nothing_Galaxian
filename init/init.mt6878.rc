@@ -1058,18 +1058,6 @@ on boot
 #NT CHG   
 on property:sys.UiBatteryLevel=*
     write proc/charger/ui_soc ${sys.UiBatteryLevel}
-#NT core
-on property:sys.system_server.start_count=1
-    write /sys/devices/virtual/NT/NT_reserve_kernel_log/boot_stage_systemserver 1
-
-on property:persist.sys.mglru_enable=true
-    write /sys/kernel/mm/lru_gen/enabled y
-
-on property:persist.sys.mglru_enable=false
-    write /sys/kernel/mm/lru_gen/enabled n
-
-on property:persist.sys.mglru_min_ttl_ms=*
-    write /sys/kernel/mm/lru_gen/min_ttl_ms ${persist.sys.mglru_min_ttl_ms}
 
 # brian add for BULB-3810 @{
 on property:sys.ship_mode2.enable=1
@@ -1143,26 +1131,6 @@ on property:vendor.connsys.adie.chipid=0x6637
     # unload override RRO
     write /dev/kmsg "WifiHAL: Unload disable_dual RRO"
     start wifi_unload_disable_dual_rro
-
-on property:sys.touch.game_mode.enable=*
-    write /proc/touchpanel/game_mode ${sys.touch.game_mode.enable}
-on property:sys.touch.edge_mode.enable=*
-    write /proc/touchpanel/edge_mode ${sys.touch.edge_mode.enable}
-on property:sys.touch.fod_en.enable=*
-    write /proc/touchpanel/fod_mode ${sys.touch.fod_en.enable}
-on property:sys.touch.single_en.enable=*
-    write /proc/touchpanel/gesture_mode ${sys.touch.single_en.enable}
-on property:sys.touch.pocket_mode=*
-    write /proc/touchpanel/pocket_mode ${sys.touch.pocket_mode}
-
-on property:dev.mnt.blk.data=sdc84 && property:sys.sd.enable=1
-    write /sys/dev/block/${sys.sd.devid}/queue/read_ahead_kb 2048
-    write /dev/sys/block/by-name/userdata/queue/read_ahead_kb 2048
-
-on property:dev.mnt.blk.data=sdc84 && property:sys.otg.enable=1
-    write /sys/dev/block/${sys.otg.devid}/queue/iosched/read_expire 100
-    write /sys/dev/block/${sys.otg.devid}/queue/iosched/writes_starved 10
-    write /dev/sys/block/by-name/userdata/queue/read_ahead_kb 2048
 
 # Logger
 service boot_log /system/bin/logcat -b all -D -f /metadata/boot_log.txt
