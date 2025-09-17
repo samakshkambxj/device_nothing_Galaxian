@@ -58,7 +58,7 @@ on init
     write /dev/cpuctl/system-background/cpu.shares 2048
     write /dev/cpuctl/background/cpu.uclamp.min 0
     write /dev/cpuctl/background/cpu.uclamp.max 40
-    write /dev/cpuctl/system-background/cpu.uclamp.min 1
+    write /dev/cpuctl/system-background/cpu.uclamp.min 0
     write /dev/cpuctl/system-background/cpu.uclamp.max 60
 
     # Camera daemon tasks
@@ -75,14 +75,14 @@ on init
 
     # Foreground tasks
     write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground/cpu.uclamp.min 1
-    write /dev/cpuctl/foreground/cpu.uclamp.max max
+    write /dev/cpuctl/foreground/cpu.uclamp.min 0
+    write /dev/cpuctl/foreground/cpu.uclamp.max 80
     write /dev/cpuctl/foreground/cpu.shares 10240
 
     # Foreground window tasks
     write /dev/cpuctl/foreground_window/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground_window/cpu.uclamp.min 1
-    write /dev/cpuctl/foreground_window/cpu.uclamp.max max
+    write /dev/cpuctl/foreground_window/cpu.uclamp.min 0
+    write /dev/cpuctl/foreground_window/cpu.uclamp.max 80
     write /dev/cpuctl/foreground_window/cpu.shares 10240
 
     # NeuralNetwork API HAL tasks
@@ -93,7 +93,7 @@ on init
 
     # Top app tasks
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/foreground/cpu.uclamp.min 5
+    write /dev/cpuctl/foreground/cpu.uclamp.min 0
     write /dev/cpuctl/top-app/cpu.uclamp.max max
     write /dev/cpuctl/top-app/cpu.shares 20480
 

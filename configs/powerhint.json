@@ -183,6 +183,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "UclampFGMin",
+      "Path": "/dev/cpuctl/foreground/cpu.uclamp.min",
+      "Values": [
+        "0",
+        "15"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "PowerHALRenderingState",
       "Path": "vendor.powerhal.rendering",
       "Values": [
@@ -216,6 +226,12 @@
       "Node": "CPUBigClusterMinFreq",
       "Duration": 58,
       "Value": "1300000"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "UclampFGMin",
+      "Duration": 58,
+      "Value": "15"
     },
     {
       "PowerHint": "LAUNCH",
