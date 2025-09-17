@@ -193,6 +193,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "UclampTAMin",
+      "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
+      "Values": [
+        "0",
+        "100"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "PowerHALRenderingState",
       "Path": "vendor.powerhal.rendering",
       "Values": [
@@ -232,6 +242,30 @@
       "Node": "UclampFGMin",
       "Duration": 58,
       "Value": "15"
+    },
+    {
+      "PowerHint": "FIXED_PERFORMANCE",
+      "Node": "GpuPwrLevel",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "FIXED_PERFORMANCE",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 0,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "FIXED_PERFORMANCE",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 0,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "FIXED_PERFORMANCE",
+      "Node": "UclampTAMin",
+      "Duration": 0,
+      "Value": "100"
     },
     {
       "PowerHint": "LAUNCH",
