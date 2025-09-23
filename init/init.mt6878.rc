@@ -19,8 +19,6 @@ on early-boot
 on init
     write /proc/bootprof "INIT:init"
 
-    mkdir /mnt/cd-rom 0000 system system
-
     # Property used for sku specific sysconfig and permissions
     setprop ro.boot.product.hardware.sku ${ro.boot.hardware.sku}
 
@@ -100,6 +98,7 @@ on charger
 
 on early-fs
     write /proc/bootprof "INIT:early-fs"
+
 on fs
     write /proc/bootprof "INIT:fs"
 
@@ -109,10 +108,6 @@ on fs
     mount_all --early
     write /sys/kernel/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END"
-
-on fs
-
-   mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
 
 on late-fs
     write /proc/bootprof "INIT:late-fs"
