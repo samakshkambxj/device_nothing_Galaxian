@@ -6,9 +6,6 @@ import /vendor/etc/init/hw/init.pstore.rc
 on init
     setprop ro.boot.hardware.revision ${ro.boot.rsc}
 
-    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
-    mkdir /storage/usbotg 0700 root root
-
 #NT_EDIT BEE-62 for smartpa cali begin
 on fs
     mkdir /mnt/vendor/persist/factory 0771 root root
