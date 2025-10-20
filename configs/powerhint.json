@@ -295,6 +295,12 @@
       "Value": "9999999999"
     },
     {
+      "PowerHint": "LAUNCH",
+      "Node": "GpuPwrLevel",
+      "Duration": 0,
+      "Value": "6"
+    },
+    {
       "PowerHint": "GAME",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
