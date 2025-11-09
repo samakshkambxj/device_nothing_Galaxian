@@ -30,14 +30,17 @@
           - "30"
           - "60"
           - "120"
+         Additionally you can prepend `-` to framerate to mark it as unsupported.
          Example:
              <string-array name="config_additionalVideoConfigurations">
                  <item>0</item> <item>sd|hd|fhd</item> <item>60|120</item>
+                 <item>0</item> <item>uhd</item> <item>-60</item>
                  <item>1</item> <item>sd|hd|fhd</item> <item>60</item>
              </string-array>
     -->
     <string-array name="config_additionalVideoConfigurations">
         <item>0</item> <item>sd|hd|fhd|uhd</item> <item>24|30|60</item>
+        <item>0</item> <item>uhd</item>           <item>-60</item>
         <item>1</item> <item>sd|hd|fhd</item>     <item>24|30|60</item>
         <item>2</item> <item>sd|hd|fhd</item>     <item>30</item>
     </string-array>
