@@ -4,9 +4,14 @@ aaudio.mmap_exclusive_policy=2
 audio.deep_buffer.media=true
 audio.offload.video=true
 audio.offload.min.duration.secs=30
-ro.audio.usb.period_us=16000
+ro.audio.usb.period_us=5000
 ro.vendor.mtk_hifiaudio_support=1
 ro.vendor.mtk_audio_tuning_tool_ver=V1
+vendor.audio.powerhal.power.dl=true
+vendor.audio.powerhal.power.ul=true
+vendor.audio.powerhal.latency.ul=false
+persist.vendor.audio.usb.offload=true
+persist.vendor.speech.usb.offload=true
 
 # Camera
 camera.disable_zsl_mode=1

@@ -28,6 +28,7 @@ vendor/lib64/libaudiotoolkit_vendor.so
 vendor/lib64/libaurisysdemo.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/libblisrc32_vendor.so
+vendor/lib64/libgoodixsmartpaparser.so
 vendor/lib64/libcvsd_mtk.so
 vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libMtkSpeechEnh.so
