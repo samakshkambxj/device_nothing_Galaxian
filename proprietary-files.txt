@@ -10,7 +10,6 @@ vendor/lib64/libaal_sec.so
 vendor/etc/AudioDump_dynamic.xml
 vendor/etc/AudioLog_dynamic.xml
 vendor/lib64/hw/audio.primary.mediatek.so;SYMLINK=vendor/lib64/hw/audio.primary.mt6878.so
-vendor/lib64/hw/audio.r_submix.mediatek.so;SYMLINK=vendor/lib64/hw/audio.r_submix.mt6878.so
 vendor/lib64/libMtkSpeechEnh.so
 vendor/lib64/libMtkSpeechEnh_swb.so
 vendor/lib64/lib_iir.so
