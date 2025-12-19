@@ -58,6 +58,7 @@ vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
 vendor/etc/audio_device.xml
 vendor/etc/aurisys_config.xml
 vendor/etc/aurisys_config_rv.xml
+vendor/etc/usb_audio_accessory_only_policy_configuration.xml
 
 # Audio (Parameters)
 vendor/etc/audio_param/AudioParamOptions_mgvi.xml
