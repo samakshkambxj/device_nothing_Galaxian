@@ -23,10 +23,6 @@
         <library name="dynamics_processing" path="libdynproc.so"/>
         <library name="haptic_generator" path="libhapticgenerator.so"/>
         <library name="pre_processing" path="libaudiopreprocessing.so"/>
-        <library name="spatializer" path="libspatializer.so"/>
-        <!-- add for aac support -->
-        <library name="aac" path="libAACeffect_NT.so"/>
-        <!-- add for aac support -->
     </libraries>
 
     <!-- list of effects to load.
@@ -68,10 +64,6 @@
         <effect name="aec" library="pre_processing" uuid="bb392ec0-8d4d-11e0-a896-0002a5d5c51b"/>
         <effect name="ns" library="pre_processing" uuid="c06c8400-8e06-11e0-9cb6-0002a5d5c51b"/>
         <effect name="agc" library="pre_processing" uuid="aa8130e0-66fc-11e0-bad0-0002a5d5c51b"/>
-        <effect name="spatializer" library="spatializer" uuid="58151b10-6ae5-11ed-a1eb-0242ac120002"/>
-        <!-- add for aac support -->
-        <effect name="aac" library="aac" uuid="ae737c63-f2c0-5457-909e-1e940c91b67b"/>
-        <!-- add for aac support -->
     </effects>
 
     <!-- Audio pre processor configurations.
