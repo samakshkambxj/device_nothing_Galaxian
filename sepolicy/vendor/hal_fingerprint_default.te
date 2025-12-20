@@ -1,0 +1,4 @@
+allow hal_fingerprint_default vendor_goodix_gf_data_file:dir create_dir_perms;
+allow hal_fingerprint_default vendor_goodix_gf_data_file:file create_file_perms;
+
+set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
