@@ -212,7 +212,6 @@ vendor/etc/init/chipinfo_init.rc
 vendor/bin/conninfra_loader
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
-vendor/etc/init/hw/init_conninfra.rc
 vendor/etc/init/init.connfem.rc
 vendor/firmware/connfem.cfg
 vendor/firmware/conninfra.cfg
