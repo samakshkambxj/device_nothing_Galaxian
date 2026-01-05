@@ -53,7 +53,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.primary.default \
     audio.r_submix.default \
-    audio_policy.stub \
     audio.usb.default
 
 PRODUCT_COPY_FILES += \
