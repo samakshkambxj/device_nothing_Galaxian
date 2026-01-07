@@ -74,6 +74,9 @@ on charger
     chown system system /sys/class/leds/red/brightness
     chown system system /sys/class/leds/green/brightness
 
+    chown system system /dev/graphics/fb0
+    chown system system /dev/dri/card0
+
     start vendor.light-default
     start vendor.health-default
 
