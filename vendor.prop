@@ -313,11 +313,6 @@ ro.vendor.wifi.sap.interface=ap0
 wifi.direct.interface=p2p0
 wifi.interface=wlan0
 
-# ZRAM writeback
-ro.zram.first_wb_delay_mins=1440
-ro.zram.mark_idle_delay_mins=60
-ro.zram.periodic_wb_delay_hours=24
-
 # Zygote
 zygote.critical_window.minute=10
 

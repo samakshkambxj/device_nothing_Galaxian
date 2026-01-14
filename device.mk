@@ -136,6 +136,7 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
+    fstab.zram \
     fstab.mt6878 \
     fstab.mt6878.vendor_ramdisk \
     init.connectivity.rc \
@@ -170,10 +171,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     nt-fwk.Galaga
-
-# MM
-PRODUCT_COPY_FILES += \
-    hardware/google/pixel/mm/fstab.zram.40p:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.zram
 
 # Media
 PRODUCT_COPY_FILES += \
