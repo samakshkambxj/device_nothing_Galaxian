@@ -1,6 +1,10 @@
 # Fingerprint
 type vendor_goodix_gf_data_file, file_type, data_file_type;
 
+# fp_status
+type sysfs_panel_feature, fs_type, sysfs_type;
+typeattribute sysfs_panel_feature mlstrustedobject;
+
 # FOD
 type sysfs_fts_fod_mode, fs_type, sysfs_type;
 
