@@ -10,3 +10,6 @@ type sysfs_fts_fod_mode, fs_type, sysfs_type;
 
 # NTF
 type vendor_ntf_file, file_type;
+
+# Touchpanel
+type proc_touchpanel, fs_type, proc_type;

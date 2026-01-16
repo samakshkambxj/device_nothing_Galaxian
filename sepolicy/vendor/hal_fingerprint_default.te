@@ -5,4 +5,7 @@ allow hal_fingerprint_default sysfs_panel_feature:file { read write open };
 
 allow hal_fingerprint_default sysfs_fts_fod_mode:file { read write open };
 
+allow hal_fingerprint_default proc_touchpanel:dir { getattr search };
+allow hal_fingerprint_default proc_touchpanel:file { read write getattr open };
+
 set_prop(hal_fingerprint_default, vendor_fingerprint_prop)

@@ -11,6 +11,9 @@ genfscon sysfs /panel_feature/fp_status    u:object_r:sysfs_panel_feature:s0
 # FOD
 genfscon sysfs /devices/platform/soc/11013000.spi3/spi_master/spi3/spi3.0        u:object_r:sysfs_fts_fod_mode:s0
 
+# Touchpanel
+genfscon proc /touchpanel    u:object_r:proc_touchpanel:s0
+
 # Wakeup
 genfscon sysfs /devices/platform/18000000.consys/wakeup                                                                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/charger/power_supply/mtk-mst-div-chg/wakeup                                                     u:object_r:sysfs_wakeup:s0
