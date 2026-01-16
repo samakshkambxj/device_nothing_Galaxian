@@ -1,5 +1,8 @@
 # Fingerprint
 type vendor_goodix_gf_data_file, file_type, data_file_type;
 
+# FOD
+type sysfs_fts_fod_mode, fs_type, sysfs_type;
+
 # NTF
 type vendor_ntf_file, file_type;
