@@ -11,6 +11,10 @@ genfscon sysfs /panel_feature/fp_status    u:object_r:sysfs_panel_feature:s0
 # FOD
 genfscon sysfs /devices/platform/soc/11013000.spi3/spi_master/spi3/spi3.0        u:object_r:sysfs_fts_fod_mode:s0
 
+# Memory
+genfscon proc /sys/vm/lowmem_reserve_ratio    u:object_r:proc_watermark_boost_factor:s0
+genfscon proc /sys/vm/min_free_kbytes         u:object_r:proc_watermark_boost_factor:s0
+
 # nvmem
 genfscon sysfs /devices/platform/efuse@11f10000/mtk-devinfo0/nvmem    u:object_r:sysfs_nvmem:s0
 
