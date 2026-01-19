@@ -53,7 +53,12 @@ vendor/lib64/libvow_comp_test.so
 vendor/lib64/vendor.mediatek.hardware.audio@8.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
 
-# Audio Configurations
+# Audio (Configs)
+vendor/etc/audio_device.xml
+vendor/etc/aurisys_config.xml
+vendor/etc/aurisys_config_rv.xml
+
+# Audio (Parameters)
 vendor/etc/audio_param/AudioParamOptions_mgvi.xml
 vendor/etc/audio_param/AudioParamOptions_vext.xml
 vendor/etc/audio_param/BtInfo_AudioParam.xml
@@ -1158,6 +1163,7 @@ system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
 # Kernel
 vendor/bin/init.insmod.sh
+vendor/etc/init/hw/init.mtkgki.rc
 vendor/etc/init.insmod.mt6878.cfg
 
 # Keymint
@@ -1198,6 +1204,10 @@ vendor/lib64/libcodec2_vpp_mi_plugin.so
 vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libformatter.so
+
+# Media (Configs)
+vendor/etc/media_profiles_V1_0.xml
+vendor/etc/mtk_platform_codecs_config.xml
 
 # MMAgent
 vendor/bin/hw/vendor.mediatek.hardware.mmagent-service
@@ -1421,6 +1431,7 @@ vendor/etc/virtual-spn-conf-by-imsi.xml
 
 # Sensors
 vendor/bin/hw/vendor.noth.hardware.sensor.sensor_extension-service
+vendor/etc/init/hw/init.sensor_2_0.rc
 vendor/etc/init/vendor.noth.hardware.sensor.sensor_extension-service.rc
 vendor/etc/vintf/manifest/vendor.noth.hardware.sensor.sensor_extension-service.xml
 vendor/firmware/remoteproc_scp
@@ -1563,6 +1574,9 @@ vendor/etc/init/init.wlan_drv.rc
 vendor/etc/init/netdagent.rc
 vendor/etc/init/wlan_assistant.rc
 vendor/etc/vintf/manifest/CommandService.xml
+vendor/etc/wifi/p2p_supplicant_overlay.conf
+vendor/etc/wifi/wpa_supplicant.conf
+vendor/etc/wifi/wpa_supplicant_overlay.conf
 vendor/lib64/libwapi.so
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
 vendor/lib64/libwifical.so

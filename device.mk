@@ -147,9 +147,7 @@ PRODUCT_PACKAGES += \
     init.modem.rc \
     init.mt6878.rc \
     init.mt6878.usb.rc \
-    init.mtkgki.rc \
     init.project.rc \
-    init.sensor_2_0.rc \
     ueventd.mt6878.rc \
     init.recovery.mt6878.rc
 
@@ -295,7 +293,6 @@ PRODUCT_PACKAGES += \
     libwifi-hal-wrapper
 
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi) \
     frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml
 
