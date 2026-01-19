@@ -189,6 +189,7 @@ PRODUCT_PACKAGES += \
     FrameworkResOverlayGalaga \
     SettingsResOverlayGalaga \
     SystemUIOverlayGalaga \
+    TelephonyResTargetGalaga \
     WifiOverlayGalaga
 
 PRODUCT_PACKAGES += \
