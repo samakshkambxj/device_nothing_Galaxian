@@ -202,7 +202,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libmtkperf_client_vendor \
-    libperfctl_vendor
+    libperfctl_vendor \
+    libpowerhalwrap_vendor
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
