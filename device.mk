@@ -159,6 +159,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.Galaga
 
+# Properties
+include $(DEVICE_PATH)/vendor_logtag.mk
+
 # NTF
 PRODUCT_PACKAGES += \
     nt-fwk.Galaga
