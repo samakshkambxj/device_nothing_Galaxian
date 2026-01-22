@@ -1130,6 +1130,10 @@ vendor/etc/virtual-spn-conf-by-efpnn.xml
 vendor/etc/virtual-spn-conf-by-efspn.xml
 vendor/etc/virtual-spn-conf-by-imsi.xml
 
+# Secure Element
+vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
+vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
+
 # Sensors
 vendor/bin/hw/vendor.noth.hardware.sensor.sensor_extension-service
 vendor/etc/init/hw/init.sensor_2_0.rc
