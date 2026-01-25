@@ -5,6 +5,7 @@
 #
 
 DEVICE_PATH := device/nothing/Galaga
+KERNEL_PATH := $(DEVICE_PATH)-kernel
 
 # A/B
 AB_OTA_PARTITIONS := \
@@ -62,7 +63,7 @@ BOARD_MKBOOTIMG_INIT_ARGS += \
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_IMAGE_NAME := Image.lz4
 
 # Kernel (cmdline)
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
@@ -72,22 +73,33 @@ BOARD_BOOTCONFIG += androidboot.serialconsole=0
 BOARD_BOOTCONFIG += androidboot.selinux=permissive
 
 # Kernel (prebuilt)
-TARGET_KERNEL_SOURCE := $(DEVICE_PATH)-kernel/headers/
-TARGET_NO_KERNEL_OVERRIDE := true
-TARGET_FORCE_PREBUILT_KERNEL := true
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)-kernel/dtb
-PRODUCT_COPY_FILES += \
-	$(DEVICE_PATH)-kernel/Image.gz:kernel
+TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/$(BOARD_KERNEL_IMAGE_NAME)
+TARGET_PREBUILT_KERNEL_HEADERS := $(KERNEL_PATH)/kernel-uapi-headers.tar.gz
+BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
 
 # Kernel modules
-BOARD_SYSTEM_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)-kernel/system/*.ko)
-BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/system/modules.load))
-BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)-kernel/vendor/*.ko)
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/vendor/modules.load))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)-kernel/ramdisk/*.ko)
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/ramdisk/modules.load))
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/ramdisk/modules.load.recovery))
-BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD) $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD)
+BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.system))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.vendor))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.ramdisk))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules.load.ramdisk_recovery))
+ALL_VENDOR_RAMDISK_MODULES := $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD) $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
+
+BOARD_SYSTEM_KERNEL_MODULE_DIR := $(KERNEL_PATH)/system
+BOARD_VENDOR_KERNEL_MODULE_DIR := $(KERNEL_PATH)/vendor
+
+BOARD_SYSTEM_KERNEL_MODULES := $(addprefix $(BOARD_SYSTEM_KERNEL_MODULE_DIR)/,$(BOARD_SYSTEM_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_KERNEL_MODULES := $(addprefix $(BOARD_VENDOR_KERNEL_MODULE_DIR)/,$(BOARD_VENDOR_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(BOARD_VENDOR_KERNEL_MODULE_DIR)/,$(ALL_VENDOR_RAMDISK_MODULES))
+
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(KERNEL_PATH)/vendor/cmdq-test.ko \
+    $(KERNEL_PATH)/vendor/emi-fake-eng.ko \
+    $(KERNEL_PATH)/vendor/eph861.ko \
+    $(KERNEL_PATH)/vendor/fmradio_drv_connac2x.ko \
+    $(KERNEL_PATH)/vendor/ft3683g.ko \
+    $(KERNEL_PATH)/vendor/gps_pwr.ko \
+    $(KERNEL_PATH)/vendor/gps_scp.ko \
+    $(KERNEL_PATH)/vendor/tui-common.ko
 
 # Partitions
 -include vendor/lineage/config/BoardConfigReservedSize.mk
