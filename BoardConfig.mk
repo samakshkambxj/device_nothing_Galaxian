@@ -67,6 +67,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz
 # Kernel (cmdline)
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += log_buf_len=1M
+BOARD_KERNEL_CMDLINE += sysctl.kernel.sched_pelt_multiplier=4
 BOARD_BOOTCONFIG += androidboot.serialconsole=0
 BOARD_BOOTCONFIG += androidboot.selinux=permissive
 
