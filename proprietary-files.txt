@@ -1067,7 +1067,6 @@ vendor/etc/slp_conf
 
 # Graphics
 vendor/bin/hw/mt6878/android.hardware.graphics.allocator-V2-service-mediatek.mt6878;SYMLINK=vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
-vendor/bin/hw/mt6878/arm.mali.platform-service.mediatek.mt6878;SYMLINK=vendor/bin/hw/arm.mali.platform-service.mediatek
 vendor/bin/hw/android.hardware.graphics.composer@3.2-service
 vendor/bin/hw/vendor.mediatek.hardware.gpuserv-service
 vendor/etc/gralloc/cam.xml
@@ -1076,9 +1075,7 @@ vendor/etc/gralloc/dpu_aeu.xml
 vendor/etc/gralloc/gpu.xml
 vendor/etc/gralloc/vpu.xml
 vendor/etc/init/android.hardware.graphics.composer@3.2-service.rc
-vendor/etc/init/arm.mali.platform-mediatek.rc
 vendor/etc/init/gpuserv-default.rc
-vendor/etc/vintf/manifest/arm.mali.platform-mediatek.xml
 vendor/etc/vintf/manifest/manifest_allocator.xml
 vendor/etc/vintf/manifest/manifest_hwcomposer.xml
 vendor/etc/vintf/manifest/mapper.mediatek.xml
@@ -1102,7 +1099,6 @@ vendor/lib64/mt6878/arm.graphics-V4-ndk.so;SYMLINK=vendor/lib64/arm.graphics-V4-
 vendor/lib64/mt6878/arm.mali.platform-V2-ndk.so;SYMLINK=vendor/lib64/arm.mali.platform-V2-ndk.so
 vendor/lib64/mt6878/libarm_egl_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_egl_properties_sysprop.so
 vendor/lib64/mt6878/libarm_gralloc_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_gralloc_properties_sysprop.so
-vendor/lib64/mt6878/libarm_mali_config_sysprops.so;SYMLINK=vendor/lib64/libarm_mali_config_sysprops.so
 vendor/lib64/mt6878/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so
 vendor/lib64/libDefaultFpsActor.so
 vendor/lib64/libFrameRecord.so
