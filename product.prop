@@ -21,5 +21,12 @@ ro.com.google.lens.oem_camera_package=com.nothing.camera
 ro.camerax.extensions.enabled=true
 vendor.camera.aux.packagelist=com.mediatek.camera,com.nothing.ois.cal,com.nothing.camera,com.tools.cit
 
-# RKPD
+# Remote Key Provisioning (RKP)
+remote_provisioning.enable_rkpd=true
 remote_provisioning.hostname=remoteprovisioning.googleapis.com
+remote_provisioning.tee.rkp_only=1
+remote_provisioning.strongbox.rkp_only=1
+
+# zRAM
+mmd.zram.enabled=true
+mmd.zram.recompression.enabled=true
