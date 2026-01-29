@@ -901,7 +901,6 @@ vendor/etc/camera/superiq_model_rear_tele
 vendor/etc/camera/superiq_model_rear_uw
 vendor/etc/camera/vidhance.lic
 vendor/etc/camera/vidhance_calibration
-vendor/etc/bh3.dla
 vendor/etc/default_pd_calibration.bin
 
 # Camera firmware
@@ -1417,7 +1416,6 @@ vendor/lib64/vendor.mediatek.hardware.rcs@2.0.so
 # Radio (Configs)
 vendor/etc/apdb/APDB_MT6878___W2452
 vendor/etc/apdb/APDB_MT6878___W2452_ENUM
-vendor/etc/MNL_Config.xml
 vendor/etc/ecc_list.xml
 vendor/etc/ecc_list_OP01.xml
 vendor/etc/ecc_list_OP02.xml
@@ -1478,7 +1476,6 @@ vendor/etc/thermal/thermal_policy_13.conf
 vendor/etc/thermal/thermal_policy_14.conf
 vendor/etc/thermal/thermal_policy_15.conf
 vendor/etc/fstb.cfg
-vendor/etc/mpe.conf
 
 # Tether Offload
 vendor/bin/hw/tetheroffloadservice
