@@ -94,10 +94,7 @@ on charger
 
     start vendor.light-default
     start vendor.health-default
-##NT,start charge sevice,begin
-    start vendor.charge-default-poweroff
-    mount ext4 /dev/block/by-name/persist /mnt/vendor/persist rw wait
-##NT,start charge sevice,end
+
     # Stop bootprof
     write /proc/bootprof "0"
 
@@ -1265,13 +1262,6 @@ service osi /system/bin/osi
     disabled
     oneshot
     #seclabel u:r:osi:s0
-
-# BEE-207
-##NT,start charge sevice
- service vendor.charge-default-poweroff /vendor/bin/hw/vendor.noth.hardware.charge-service
-      class core
-      group system
-      disabled
 
 # Wi-Fi single load for 6631/6637
 service wifi_load_disable_dual_rro /system/bin/cmd -w overlay enable com.android.wifi.disable_dual.resources.overlay
