@@ -1105,33 +1105,6 @@ on property:ro.boot.slot_suffix=_b
 on property:vendor.mtk.md1.status=reset
     setprop persist.vendor.atm.mdmode normal
 
-# Wi-Fi single load for 6631/6637
-service wifi_load_disable_dual_rro /system/bin/cmd -w overlay enable com.android.wifi.disable_dual.resources.overlay
-    class main
-    user root
-    group root
-    oneshot
-    disabled
-    seclabel u:r:su:s0
-
-service wifi_unload_disable_dual_rro /system/bin/cmd -w overlay disable com.android.wifi.disable_dual.resources.overlay
-    class main
-    user root
-    group root
-    oneshot
-    disabled
-    seclabel u:r:su:s0
-
-on property:vendor.connsys.adie.chipid=0x6631
-    # load override RRO
-    write /dev/kmsg "WifiHAL: Load disable_dual RRO"
-    start wifi_load_disable_dual_rro
-
-on property:vendor.connsys.adie.chipid=0x6637
-    # unload override RRO
-    write /dev/kmsg "WifiHAL: Unload disable_dual RRO"
-    start wifi_unload_disable_dual_rro
-
 # Logger
 service boot_log /system/bin/logcat -b all -D -f /metadata/boot_log.txt
     class main
