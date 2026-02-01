@@ -10,10 +10,6 @@ import /vendor/etc/init/hw/init.board_id.rc
 on early-init
     write /proc/bootprof "INIT:early-init"
 
-on early-boot
-    # set RLIMIT_MEMLOCK to 64KB
-    setrlimit 8 65536 65536
-
 on init
     write /proc/bootprof "INIT:init"
 
