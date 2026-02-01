@@ -174,9 +174,6 @@ PRODUCT_BOOT_JARS += \
     nt-fwk.Galaga
 
 # MM
-PRODUCT_PACKAGES += \
-    init.zram.rc
-
 PRODUCT_COPY_FILES += \
     hardware/google/pixel/mm/fstab.zram.40p:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.zram
 
