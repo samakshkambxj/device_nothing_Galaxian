@@ -145,7 +145,6 @@ PRODUCT_PACKAGES += \
     fstab.mt6878 \
     fstab.mt6878.vendor_ramdisk \
     init.connectivity.rc \
-    init.modem.rc \
     init.mt6878.rc \
     init.mt6878.usb.rc \
     init.project.rc \
