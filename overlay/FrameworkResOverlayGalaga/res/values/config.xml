@@ -41,10 +41,6 @@
     <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
 
-    <!-- The maximum range of gamma adjustment possible using the screen
-         auto-brightness adjustment setting. -->
-    <fraction name="config_autoBrightnessAdjustmentMaxGamma">150%</fraction>
-
     <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
          (1-based arrays)
@@ -233,9 +229,6 @@
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutout">M 0,0 L -20, 0 L -20, 26 L 20, 26 L 20, 0 Z</string>
 
-    <!-- True if the device supports Sustained Performance Mode-->
-    <bool name="config_sustainedPerformanceModeSupported">true</bool>
-
     <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
     <bool name="config_zramWriteback">true</bool>
 
@@ -254,10 +247,6 @@
          rates are available from hardware composer. Only has an effect if the value is
          non-zero. -->
     <integer name="config_defaultPeakRefreshRate">120</integer>
-
-    <!-- The type of the light sensor to be used by the display framework for things like
-         auto-brightness. If unset, then it just gets the default sensor of type TYPE_LIGHT. -->
-    <string name="config_displayLightSensorType">"android.sensor.light"</string>
 
     <!-- When each intermediate UDFPS enroll stage ends, as a fraction of total progress. -->
     <string-array name="config_udfps_enroll_stage_thresholds" translatable="false">

@@ -4,14 +4,6 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <!-- the padding on the start of the statusbar -->
-    <dimen name="status_bar_padding_start">35px</dimen>
-
-    <!-- the padding on the top of the statusbar (usually 0) -->
-    <dimen name="status_bar_padding_top">20px</dimen>
-
-    <dimen name="rounded_corner_content_padding">0dp</dimen>
-
     <!-- Microns/ums (1000 um = 1mm) per pixel for the given device. If unspecified, UI that
          relies on this value will not be sized correctly. -->
     <item name="pixel_pitch" format="float" type="dimen">94.6</item>
