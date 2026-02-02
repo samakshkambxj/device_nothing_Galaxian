@@ -14,7 +14,7 @@
     <bool name="config_automatic_brightness_available">true</bool>
 
     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
-    <integer name="config_shutdownBatteryTemperature">580</integer>
+    <integer name="config_shutdownBatteryTemperature">600</integer>
 
     <!-- Minimum screen brightness setting allowed by power manager.
          -2 is invalid so setting will resort to int value specified above.
