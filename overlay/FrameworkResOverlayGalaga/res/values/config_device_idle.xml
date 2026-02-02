@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Default for DeviceIdleController.Constants.LIGHT_IDLE_INCREASE_LINEARLY -->
+    <bool name="device_idle_light_idle_increase_linearly">false</bool>
+
+    <!-- Default for DeviceIdleController.Constants.LIGHT_MAX_IDLE_TIMEOUT -->
+    <integer name="device_idle_light_max_idle_to_ms">900000</integer>
+</resources>
