@@ -6,6 +6,5 @@
 
 runtime_resource_overlay {
     name: "SettingsResOverlayGalaga",
-    resource_dirs: ["res"],
     vendor: true,
 }

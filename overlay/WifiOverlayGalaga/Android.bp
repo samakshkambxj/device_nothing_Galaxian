@@ -6,6 +6,5 @@
 runtime_resource_overlay {
     name: "WifiOverlayGalaga",
     theme: "WifiOverlay",
-    certificate: "platform",
-    vendor: true
+    vendor: true,
 }
