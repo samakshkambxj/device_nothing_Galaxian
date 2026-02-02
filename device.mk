@@ -188,12 +188,14 @@ PRODUCT_PACKAGES += \
     FrameworkResOverlayGalaga \
     SettingsResOverlayGalaga \
     SystemUIOverlayGalaga \
-    TetheringConfigOverlayGalaga \
     WifiOverlayGalaga
 
 PRODUCT_PACKAGES += \
     LineageApertureOverlayGalaga \
     LineageSDKResGalaga
+
+PRODUCT_PACKAGES += \
+    NcmTetheringOverlay
 
 # Power
 PRODUCT_PACKAGES += \
