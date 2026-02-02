@@ -193,7 +193,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     LineageApertureOverlayGalaga \
-    LineageDialerGalaga \
     LineageSDKResGalaga
 
 # Power
