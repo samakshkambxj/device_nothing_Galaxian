@@ -26,5 +26,5 @@ PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceName=Galaga \
-    BuildDesc="Galaga-user 15 AP3A.240905.015.A2 2511032121 release-keys" \
-    BuildFingerprint=Nothing/Galaga/Galaga:15/AP3A.240905.015.A2/2511032121:user/release-keys
+    BuildDesc="sys_mssi_64_64only_ww_armv82-user 16 BP2A.250605.031.A3 2601081654 release-keys" \
+    BuildFingerprint=Nothing/Galaga/Galaga:16/BP2A.250605.031.A3/2601081654:user/release-keys

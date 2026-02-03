@@ -1,7 +1,0 @@
-cc_library_shared {
-    name: "libshim_camera",
-    srcs: [
-        "libshim_camera.c",
-    ],
-    vendor: true
-}

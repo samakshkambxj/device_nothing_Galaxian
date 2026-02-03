@@ -1,4 +1,0 @@
-void _ZNSt6__ndk16chrono12steady_clock3nowEv() {}
-void _ZNSt6__ndk16chrono12system_clock3nowEv() {}
-void __ndk16chrono12system_clock9to_time_tERKNS0_10time_pointIS1_NS0_8durationIxNS_5ratioILl1ELl1000000EEEEEEE() {}
-void _ZNSt6__ndk16chrono12system_clock9to_time_tERKNS0_10time_pointIS1_NS0_8durationIxNS_5ratioILl1ELl1000000EEEEEEE() {}

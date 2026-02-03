@@ -1,4 +1,4 @@
-# All proprietary files from this list are from Galaga_V3.2-251103-2121
+# All proprietary files from this list are from Galaga_B4.0-260108-1654
 
 # AAL
 vendor/lib64/mt6878/libaal_cust_func.so;SYMLINK=vendor/lib64/libaal_cust_func.so
@@ -7,13 +7,10 @@ vendor/lib64/libaal_key.so
 vendor/lib64/libaal_sec.so
 
 # Audio
-vendor/etc/AudioDump_dynamic.xml
 vendor/etc/AudioLog_dynamic.xml
-vendor/lib64/hw/sound_trigger.primary.default.so
 vendor/lib64/hw/audio.primary.mediatek.so;SYMLINK=vendor/lib64/hw/audio.primary.mt6878.so
+vendor/lib64/hw/sound_trigger.primary.default.so
 vendor/lib64/libMtkSpeechEnh.so
-vendor/lib64/libMtkSpeechEnh_swb.so
-vendor/lib64/lib_iir.so
 vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-stock.so;FIX_SONAME
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
@@ -25,7 +22,6 @@ vendor/lib64/libaudiodcrflt_vendor.so
 vendor/lib64/libaudiofmtconv.so
 vendor/lib64/libaudioloudc.so
 vendor/lib64/libaudioprimarydevicehalifclient.so
-vendor/lib64/libaudiosmartpamtk.so
 vendor/lib64/libaudiotoolkit_vendor.so
 vendor/lib64/libaurisysdemo.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
@@ -36,8 +32,6 @@ vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtkshifter_vendor.so
 vendor/lib64/libmtkspparser.so
-vendor/lib64/libmtkspparser_swb.so
-vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/libvow_ap_test_aa.so
@@ -184,6 +178,8 @@ vendor/etc/audio_param/VolumeGainMap_AudioParam.xml
 vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
 vendor/etc/audio_param/Volume_AudioParam.xml
 vendor/etc/audio_param/Volume_ParamUnitDesc.xml
+
+# Audio (SmartPA Parameters)
 vendor/etc/smartpa_param/tfa98xx_device.bin
 vendor/etc/smartpa_param/tfa98xx_music.bin
 vendor/etc/smartpa_param/tfa98xx_ringtone.bin
@@ -211,54 +207,25 @@ vendor/etc/init/chipinfo_init.rc
 
 # Connectivity
 vendor/bin/conninfra_loader
-vendor/bin/wmt_launcher
-vendor/bin/wmt_loader
-vendor/etc/init/init.connfem.rc
 vendor/firmware/connfem.cfg
 vendor/firmware/conninfra.cfg
 vendor/lib64/libconnfem.so
 
 # Camera
-vendor/bin/hw/camerahalserver;SYMLINK=vendor/bin/hw/mt6878/camerahalserver
-vendor/bin/mt6878/camsys_dump_tool;SYMLINK=vendor/bin/camsys_dump_tool
+vendor/bin/hw/mt6878/camerahalserver;SYMLINK=vendor/bin/hw/camerahalserver
 vendor/bin/mt6878/jpegtool;SYMLINK=vendor/bin/jpegtool
 vendor/etc/init/camerahalserver.rc
 vendor/etc/vintf/manifest/manifest_cameraprovider.xml
 vendor/etc/vintf/manifest/manifest_isphal.xml
-vendor/lib64/camera/node/com.nothing.node.b2j.so
-vendor/lib64/camera/node/com.nothing.node.b2y.so
-vendor/lib64/camera/node/com.nothing.node.beauty.so
-vendor/lib64/camera/node/com.nothing.node.bokehdepthjiigan.so
-vendor/lib64/camera/node/com.nothing.node.bokehhdr.so
-vendor/lib64/camera/node/com.nothing.node.cfr.so
-vendor/lib64/camera/node/com.nothing.node.darkvision.so
-vendor/lib64/camera/node/com.nothing.node.dmp.so
-vendor/lib64/camera/node/com.nothing.node.filter.so
-vendor/lib64/camera/node/com.nothing.node.frt.so
-vendor/lib64/camera/node/com.nothing.node.jpeg.so
-vendor/lib64/camera/node/com.nothing.node.jpegr.so
-vendor/lib64/camera/node/com.nothing.node.ldc.so
-vendor/lib64/camera/node/com.nothing.node.memcpy.so
-vendor/lib64/camera/node/com.nothing.node.mmf.so
-vendor/lib64/camera/node/com.nothing.node.p2y.so
-vendor/lib64/camera/node/com.nothing.node.portrait.so
-vendor/lib64/camera/node/com.nothing.node.rawhdr.so
-vendor/lib64/camera/node/com.nothing.node.singlebokeh.so
-vendor/lib64/camera/node/com.nothing.node.supermoon.so
-vendor/lib64/camera/node/com.nothing.node.supernight.so
-vendor/lib64/camera/node/com.nothing.node.superportraitnight.so
-vendor/lib64/camera/node/com.nothing.node.watermark.so
-vendor/lib64/camera/node/com.nothing.node.y2y.so
-vendor/lib64/camera/node/com.nothing.node.yuvhdr.so
-vendor/lib64/camera/node/com.nothing.node.yuvsr.so
-vendor/lib64/hw/mt6878/vendor.mediatek.hardware.camera.atms@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
-vendor/lib64/hw/mt6878/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
-vendor/lib64/hw/mt6878/vendor.mediatek.hardware.camera.isphal@1.1-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal@1.1-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.atms_aidl@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice_aidl@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so
+vendor/lib64/mt6878/gc02m1_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc02m1_mipi_raw_IdxMgr.so
+vendor/lib64/mt6878/gc02m1_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc02m1_mipi_raw_tuning.so
 vendor/lib64/mt6878/gc08a8_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc08a8_mipi_raw_IdxMgr.so
 vendor/lib64/mt6878/gc08a8_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc08a8_mipi_raw_tuning.so
+vendor/lib64/mt6878/gc08a8syx_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc08a8syx_mipi_raw_IdxMgr.so
+vendor/lib64/mt6878/gc08a8syx_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc08a8syx_mipi_raw_tuning.so
 vendor/lib64/mt6878/gc08a8xl_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc08a8xl_mipi_raw_IdxMgr.so
 vendor/lib64/mt6878/gc08a8xl_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc08a8xl_mipi_raw_tuning.so
 vendor/lib64/mt6878/gc16b3c2_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc16b3c2_mipi_raw_IdxMgr.so
@@ -269,6 +236,8 @@ vendor/lib64/mt6878/gc16b3cofilm_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc16b3c
 vendor/lib64/mt6878/gc16b3cofilm_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc16b3cofilm_mipi_raw_tuning.so
 vendor/lib64/mt6878/gc16b3ctxd_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc16b3ctxd_mipi_raw_IdxMgr.so
 vendor/lib64/mt6878/gc16b3ctxd_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc16b3ctxd_mipi_raw_tuning.so
+vendor/lib64/mt6878/gc16b3cxl_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc16b3cxl_mipi_raw_IdxMgr.so
+vendor/lib64/mt6878/gc16b3cxl_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc16b3cxl_mipi_raw_tuning.so
 vendor/lib64/mt6878/imx882_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/imx882_mipi_raw_IdxMgr.so
 vendor/lib64/mt6878/imx882_mipi_raw_tuning.so;SYMLINK=vendor/lib64/imx882_mipi_raw_tuning.so
 vendor/lib64/mt6878/imx882txd_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/imx882txd_mipi_raw_IdxMgr.so
@@ -298,9 +267,7 @@ vendor/lib64/mt6878/lib3a.sensors.color.so;SYMLINK=vendor/lib64/lib3a.sensors.co
 vendor/lib64/mt6878/lib3a.sensors.flicker.so;SYMLINK=vendor/lib64/lib3a.sensors.flicker.so
 vendor/lib64/mt6878/lib3a.stat.so;SYMLINK=vendor/lib64/lib3a.stat.so
 vendor/lib64/mt6878/libDBAccessor_ISP.so;SYMLINK=vendor/lib64/libDBAccessor_ISP.so
-vendor/lib64/mt6878/libDR.so;SYMLINK=vendor/lib64/libDR.so
 vendor/lib64/mt6878/libMtkMediaController.so;SYMLINK=vendor/lib64/libMtkMediaController.so
-vendor/lib64/mt6878/libMtkMediaController_SAL.so;SYMLINK=vendor/lib64/libMtkMediaController_SAL.so
 vendor/lib64/mt6878/libSonyIMX519PdafWrapper.so;SYMLINK=vendor/lib64/libSonyIMX519PdafWrapper.so
 vendor/lib64/mt6878/lib_bsscore.so;SYMLINK=vendor/lib64/lib_bsscore.so
 vendor/lib64/mt6878/libaaa_feature.so;SYMLINK=vendor/lib64/libaaa_feature.so
@@ -308,7 +275,6 @@ vendor/lib64/mt6878/libaaa_ltm.so;SYMLINK=vendor/lib64/libaaa_ltm.so
 vendor/lib64/mt6878/libaaa_ltmx.so;SYMLINK=vendor/lib64/libaaa_ltmx.so
 vendor/lib64/mt6878/libaaa_tnc.so;SYMLINK=vendor/lib64/libaaa_tnc.so
 vendor/lib64/mt6878/libaaa_toneutil.so;SYMLINK=vendor/lib64/libaaa_toneutil.so
-vendor/lib64/mt6878/libacdk.so;SYMLINK=vendor/lib64/libacdk.so
 vendor/lib64/mt6878/libaiawb_fs.so;SYMLINK=vendor/lib64/libaiawb_fs.so
 vendor/lib64/mt6878/libaiawb_fs_model.so;SYMLINK=vendor/lib64/libaiawb_fs_model.so
 vendor/lib64/mt6878/libaiawb_moon.so;SYMLINK=vendor/lib64/libaiawb_moon.so
@@ -317,9 +283,6 @@ vendor/lib64/mt6878/libaiawb_p1ggm.so;SYMLINK=vendor/lib64/libaiawb_p1ggm.so
 vendor/lib64/mt6878/libaiawb_sun.so;SYMLINK=vendor/lib64/libaiawb_sun.so
 vendor/lib64/mt6878/libaiawb_sun_model.so;SYMLINK=vendor/lib64/libaiawb_sun_model.so
 vendor/lib64/mt6878/libaibc_tuning.so;SYMLINK=vendor/lib64/libaibc_tuning.so
-vendor/lib64/mt6878/libaibc_tuning_p2.so;SYMLINK=vendor/lib64/libaibc_tuning_p2.so
-vendor/lib64/mt6878/libaibc_tuning_p3.so;SYMLINK=vendor/lib64/libaibc_tuning_p3.so
-vendor/lib64/mt6878/libaibc_tuning_p4.so;SYMLINK=vendor/lib64/libaibc_tuning_p4.so
 vendor/lib64/mt6878/libaicapturecore.so;SYMLINK=vendor/lib64/libaicapturecore.so
 vendor/lib64/mt6878/libaidepth_tuning.so;SYMLINK=vendor/lib64/libaidepth_tuning.so
 vendor/lib64/mt6878/libaiseg_cache.so;SYMLINK=vendor/lib64/libaiseg_cache.so
@@ -444,7 +407,6 @@ vendor/lib64/mt6878/libfeature_fsc.so;SYMLINK=vendor/lib64/libfeature_fsc.so
 vendor/lib64/mt6878/libfeature_vrp.so;SYMLINK=vendor/lib64/libfeature_vrp.so
 vendor/lib64/mt6878/libfeatureiodrv_mem.so;SYMLINK=vendor/lib64/libfeatureiodrv_mem.so
 vendor/lib64/mt6878/libfeaturepolicy_dbhandler.so;SYMLINK=vendor/lib64/libfeaturepolicy_dbhandler.so
-vendor/lib64/mt6878/libgpudataproducer.so;SYMLINK=vendor/lib64/libgpudataproducer.so
 vendor/lib64/mt6878/libimgstream-custom.so;SYMLINK=vendor/lib64/libimgstream-custom.so
 vendor/lib64/mt6878/libimgstream-drv.so;SYMLINK=vendor/lib64/libimgstream-drv.so
 vendor/lib64/mt6878/libimgstream-guard.so;SYMLINK=vendor/lib64/libimgstream-guard.so
@@ -537,10 +499,6 @@ vendor/lib64/mt6878/libmtkcam_hal_core_provider.so;SYMLINK=vendor/lib64/libmtkca
 vendor/lib64/mt6878/libmtkcam_hal_core_utils.so;SYMLINK=vendor/lib64/libmtkcam_hal_core_utils.so
 vendor/lib64/mt6878/libmtkcam_hal_custom.so;SYMLINK=vendor/lib64/libmtkcam_hal_custom.so
 vendor/lib64/mt6878/libmtkcam_hal_custom_provider.so;SYMLINK=vendor/lib64/libmtkcam_hal_custom_provider.so
-vendor/lib64/mt6878/libmtkcam_hal_hidl_common.so;SYMLINK=vendor/lib64/libmtkcam_hal_hidl_common.so
-vendor/lib64/mt6878/libmtkcam_hal_hidl_device.so;SYMLINK=vendor/lib64/libmtkcam_hal_hidl_device.so
-vendor/lib64/mt6878/libmtkcam_hal_hidl_provider.so;SYMLINK=vendor/lib64/libmtkcam_hal_hidl_provider.so
-vendor/lib64/mt6878/libmtkcam_hal_hidl_utils.so;SYMLINK=vendor/lib64/libmtkcam_hal_hidl_utils.so
 vendor/lib64/mt6878/libmtkcam_halisp_custom.so;SYMLINK=vendor/lib64/libmtkcam_halisp_custom.so
 vendor/lib64/mt6878/libmtkcam_hwnode.jpegnode.so;SYMLINK=vendor/lib64/libmtkcam_hwnode.jpegnode.so
 vendor/lib64/mt6878/libmtkcam_hwnode.p2.so;SYMLINK=vendor/lib64/libmtkcam_hwnode.p2.so
@@ -584,7 +542,6 @@ vendor/lib64/mt6878/libmtkcam_proc.so;SYMLINK=vendor/lib64/libmtkcam_proc.so
 vendor/lib64/mt6878/libmtkcam_request_requlator.so;SYMLINK=vendor/lib64/libmtkcam_request_requlator.so
 vendor/lib64/mt6878/libmtkcam_resourcedecision.so;SYMLINK=vendor/lib64/libmtkcam_resourcedecision.so
 vendor/lib64/mt6878/libmtkcam_resourcedecision_custom.so;SYMLINK=vendor/lib64/libmtkcam_resourcedecision_custom.so
-vendor/lib64/mt6878/libmtkcam_salmgr.so;SYMLINK=vendor/lib64/libmtkcam_salmgr.so
 vendor/lib64/mt6878/libmtkcam_sensorcontrol.so;SYMLINK=vendor/lib64/libmtkcam_sensorcontrol.so
 vendor/lib64/mt6878/libmtkcam_simager.so;SYMLINK=vendor/lib64/libmtkcam_simager.so
 vendor/lib64/mt6878/libmtkcam_smvr.so;SYMLINK=vendor/lib64/libmtkcam_smvr.so
@@ -604,7 +561,6 @@ vendor/lib64/mt6878/libmtkcam_zsl_customselector.so;SYMLINK=vendor/lib64/libmtkc
 vendor/lib64/mt6878/libmtkcm_ipc_dummy.so;SYMLINK=vendor/lib64/libmtkcm_ipc_dummy.so
 vendor/lib64/mt6878/libmtkltm.so;SYMLINK=vendor/lib64/libmtkltm.so
 vendor/lib64/mt6878/libpda_usdriver.so;SYMLINK=vendor/lib64/libpda_usdriver.so
-vendor/lib64/mt6878/libvainr_model.so;SYMLINK=vendor/lib64/libvainr_model.so
 vendor/lib64/mt6878/libvega_common.so;SYMLINK=vendor/lib64/libvega_common.so
 vendor/lib64/mt6878/libwa_opticalzoomfactor.so;SYMLINK=vendor/lib64/libwa_opticalzoomfactor.so
 vendor/lib64/mt6878/libwa_sat.so;SYMLINK=vendor/lib64/libwa_sat.so
@@ -616,13 +572,14 @@ vendor/lib64/mt6878/ov50d40ofilm_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/ov50d40
 vendor/lib64/mt6878/ov50d40ofilm_mipi_raw_tuning.so;SYMLINK=vendor/lib64/ov50d40ofilm_mipi_raw_tuning.so
 vendor/lib64/mt6878/s5kgn9sp_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/s5kgn9sp_mipi_raw_IdxMgr.so
 vendor/lib64/mt6878/s5kgn9sp_mipi_raw_tuning.so;SYMLINK=vendor/lib64/s5kgn9sp_mipi_raw_tuning.so
+vendor/lib64/mt6878/s5kgn9spofxian_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/s5kgn9spofxian_mipi_raw_IdxMgr.so
+vendor/lib64/mt6878/s5kgn9spofxian_mipi_raw_tuning.so;SYMLINK=vendor/lib64/s5kgn9spofxian_mipi_raw_tuning.so
 vendor/lib64/mt6878/sc202cs_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/sc202cs_mipi_raw_IdxMgr.so
 vendor/lib64/mt6878/sc202cs_mipi_raw_tuning.so;SYMLINK=vendor/lib64/sc202cs_mipi_raw_tuning.so
 vendor/lib64/mt6878/sc202cssj_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/sc202cssj_mipi_raw_IdxMgr.so
 vendor/lib64/mt6878/sc202cssj_mipi_raw_tuning.so;SYMLINK=vendor/lib64/sc202cssj_mipi_raw_tuning.so
 vendor/lib64/lib3a.ae.pipe.so
 vendor/lib64/lib3a.custom.shading.flow.so
-vendor/lib64/libAncHumanBeauty.so
 vendor/lib64/libBasicModule.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libOpenCL.so
@@ -631,25 +588,7 @@ vendor/lib64/libaaa_aaautil.so
 vendor/lib64/libaaa_afassist_V2.so
 vendor/lib64/libaaa_afassistctrl.so
 vendor/lib64/libaaa_gma.so
-vendor/lib64/libanc_dc_base.so
-vendor/lib64/libanc_fullhdr.so
-vendor/lib64/libanc_fullhdr_impl.so
-vendor/lib64/libanc_hdr.so
-vendor/lib64/libanc_hdr_adapter_front_main.so
-vendor/lib64/libanc_hdr_adapter_rear_main.so
-vendor/lib64/libanc_hdr_adapter_rear_tele.so
-vendor/lib64/libanc_hdr_adapter_rear_uw.so
-vendor/lib64/libanc_hdr_check_nothing.so
-vendor/lib64/libanc_objdetection.so
-vendor/lib64/libanc_objdetection_impl.so
-vendor/lib64/libanc_scene.so
-vendor/lib64/libanc_single_bokeh.so
-vendor/lib64/libanc_single_bokeh_impl.so
-vendor/lib64/libanc_single_rt_bokeh.so
-vendor/lib64/libanc_supermoon.so
-vendor/lib64/libanc_supermoon_impl.so
 vendor/lib64/libanc_supervq.so
-vendor/lib64/libancbase-beauty.so
 vendor/lib64/libcam.hal3a.custom.ae.HDRStateEvaluator.so
 vendor/lib64/libcam.zoomoverridemgr.so
 vendor/lib64/libcamalgo.WarpMapResizer.so
@@ -661,18 +600,16 @@ vendor/lib64/libcamalgo.sat.so
 vendor/lib64/libcamalgo.utility.so
 vendor/lib64/libcamalgo.vsdofUtil.so
 vendor/lib64/libcamalgo.warp.so
-vendor/lib64/libcamxextension_night.so
 vendor/lib64/libdlrmsc.so
 vendor/lib64/libfeature.hdr10.so
 vendor/lib64/libfeaturepolicy.so
-vendor/lib64/libffavc.so
 vendor/lib64/libgz_uree.so
+vendor/lib64/libhdr10plusvideo.so
 vendor/lib64/libheichal.so
 vendor/lib64/libimagebuffer_wrapper.so
 vendor/lib64/libjni_rater_api.so
 vendor/lib64/libjpeg-alpha-oal_vendor.so
 vendor/lib64/libjpeg-alpha_vendor.so
-vendor/lib64/libmorpho_RapidEffect.so
 vendor/lib64/libmpbase.so
 vendor/lib64/libmtkcam_cputrack.so
 vendor/lib64/libmtkcam_custom.utils.so
@@ -685,219 +622,48 @@ vendor/lib64/libmtkcam_hal_custom_state.so
 vendor/lib64/libmtkcam_hal_custom_utils.so
 vendor/lib64/libmtkcam_perfctrl_wrapper.so
 vendor/lib64/libmtkcam_thirdparty.vidhance.so
-vendor/lib64/libntcamallocator.so
-vendor/lib64/libntcamcommonutils.so
-vendor/lib64/libntcamcore.so
-vendor/lib64/libntcamera2ndk_vendor_v2.so
-vendor/lib64/libntcamextened.so
-vendor/lib64/libntcamimage_io.so
-vendor/lib64/libntcammetadata.so
-vendor/lib64/libntcampipepb.so
-vendor/lib64/libntcamselector.so
-vendor/lib64/libntcamskia.so
-vendor/lib64/libntcamthread.so
-vendor/lib64/libntcamyuv.so
-vendor/lib64/libntofflinepostproc.so
-vendor/lib64/libpfr.so
+vendor/lib64/libn3d_tuning.so
 vendor/lib64/libportrait_repair_apu.so
 vendor/lib64/libremosaic_wrapper.so
 vendor/lib64/libremosaiclib.so
-vendor/lib64/librender_lib.so
-vendor/lib64/libsdk_sr.so
-vendor/lib64/libstmobile_effect.so
 vendor/lib64/libstmobile_rater.so
 vendor/lib64/libultrahdr_mtk.so
 vendor/lib64/libvidhance.so
-vendor/lib64/libwa_depth.so
-vendor/lib64/libwa_refocus.so
-vendor/lib64/libwa_rtdof.so
 vendor/lib64/libwa_widelens_undistort.so
 vendor/lib64/libwa_widelens_undistort_impl.so
-vendor/lib64/sr_models.bin:vendor/etc/camera/sr_models.bin;SYMLINK=vendor/lib64/sr_models.bin
 vendor/lib64/vendor.mediatek.hardware.camera.aovservice-V2-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.atms-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.camera.atms@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.bgservice-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.0.so
-vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.1.so
 vendor/lib64/vendor.mediatek.hardware.camera.ccap@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.frhandler@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.0.so
-vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.1.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
 
-# Camera arcsoft
-vendor/lib64/libarcsoft_aiscenedetection.so
-vendor/lib64/libarcsoft_beautyshot.so
-vendor/lib64/libarcsoft_dark_vision_raw.so
-vendor/lib64/libarcsoft_dualcam_refocus_image.so
-vendor/lib64/libarcsoft_dualcam_refocus_video.so
-vendor/lib64/libarcsoft_high_dynamic_range.so
-vendor/lib64/libarcsoft_high_dynamic_range_v5.so
-vendor/lib64/libarcsoft_mf_superresolution.so
-vendor/lib64/libarcsoft_native_hdrbokeh_engine.so
-vendor/lib64/libarcsoft_panorama.so
-vendor/lib64/libarcsoft_portrait_super_night_raw.so
-vendor/lib64/libarcsoft_scbokeh_image.so
-vendor/lib64/libarcsoft_scbokeh_preview.so
-vendor/lib64/libarcsoft_super_night_raw.so
-vendor/lib64/libarcsoft_watermark.so
-
 # Camera configs
-vendor/etc/camera/Algomark/AJensonPro-Semibold.otf
 vendor/etc/camera/anc/sat_mecp.bin
 vendor/etc/camera/anc_yuv_svq/supervq_model
 vendor/etc/camera/anc_yuv_svq/svq_cache
-vendor/etc/camera/assets/filter_aifeiertieta/content.json
-vendor/etc/camera/assets/filter_aifeiertieta/effect_content.json
-vendor/etc/camera/assets/filter_aifeiertieta/filter.png
-vendor/etc/camera/assets/filter_aifeiertieta/filter_effect3.fs
-vendor/etc/camera/assets/filter_aifeiertieta/filter_effect3.vs
-vendor/etc/camera/assets/filter_aifeiertieta/params.json
-vendor/etc/camera/assets/filter_boli/content.json
-vendor/etc/camera/assets/filter_boli/effect_content.json
-vendor/etc/camera/assets/filter_boli/hsl.vert
-vendor/etc/camera/assets/filter_boli/len.frag
-vendor/etc/camera/assets/filter_boli/params.json
-vendor/etc/camera/assets/filter_default/content.json
-vendor/etc/camera/assets/filter_default/effect_content.json
-vendor/etc/camera/assets/filter_default/filter.png
-vendor/etc/camera/assets/filter_default/filter_effect3.fs
-vendor/etc/camera/assets/filter_default/filter_effect3.vs
-vendor/etc/camera/assets/filter_default/params.json
-vendor/etc/camera/assets/filter_feilinheibai/content.json
-vendor/etc/camera/assets/filter_feilinheibai/effect_content.json
-vendor/etc/camera/assets/filter_feilinheibai/filter.png
-vendor/etc/camera/assets/filter_feilinheibai/filter_effect3.fs
-vendor/etc/camera/assets/filter_feilinheibai/filter_effect3.vs
-vendor/etc/camera/assets/filter_feilinheibai/params.json
-vendor/etc/camera/assets/filter_fupian/content.json
-vendor/etc/camera/assets/filter_fupian/effect_content.json
-vendor/etc/camera/assets/filter_fupian/filter.png
-vendor/etc/camera/assets/filter_fupian/filter_effect3.fs
-vendor/etc/camera/assets/filter_fupian/filter_effect3.vs
-vendor/etc/camera/assets/filter_fupian/params.json
-vendor/etc/camera/assets/filter_meishi/content.json
-vendor/etc/camera/assets/filter_meishi/effect_content.json
-vendor/etc/camera/assets/filter_meishi/filter.png
-vendor/etc/camera/assets/filter_meishi/filter_effect3.fs
-vendor/etc/camera/assets/filter_meishi/filter_effect3.vs
-vendor/etc/camera/assets/filter_meishi/params.json
-vendor/etc/camera/assets/filter_nuandiao/content.json
-vendor/etc/camera/assets/filter_nuandiao/effect_content.json
-vendor/etc/camera/assets/filter_nuandiao/filter.png
-vendor/etc/camera/assets/filter_nuandiao/filter_effect3.fs
-vendor/etc/camera/assets/filter_nuandiao/filter_effect3.vs
-vendor/etc/camera/assets/filter_nuandiao/params.json
-vendor/etc/camera/assets/filter_yinyan/content.json
-vendor/etc/camera/assets/filter_yinyan/effect_content.json
-vendor/etc/camera/assets/filter_yinyan/filter.png
-vendor/etc/camera/assets/filter_yinyan/filter_effect3.fs
-vendor/etc/camera/assets/filter_yinyan/filter_effect3.vs
-vendor/etc/camera/assets/filter_yinyan/params.json
-vendor/etc/camera/assets/filter_zhengpian/content.json
-vendor/etc/camera/assets/filter_zhengpian/effect_content.json
-vendor/etc/camera/assets/filter_zhengpian/filter.png
-vendor/etc/camera/assets/filter_zhengpian/filter_effect3.fs
-vendor/etc/camera/assets/filter_zhengpian/filter_effect3.vs
-vendor/etc/camera/assets/filter_zhengpian/params.json
-vendor/etc/camera/assets/filter_zhigan/content.json
-vendor/etc/camera/assets/filter_zhigan/effect_content.json
-vendor/etc/camera/assets/filter_zhigan/filter.png
-vendor/etc/camera/assets/filter_zhigan/filter_effect3.fs
-vendor/etc/camera/assets/filter_zhigan/filter_effect3.vs
-vendor/etc/camera/assets/filter_zhigan/params.json
-vendor/etc/camera/assets/filter_ziran/content.json
-vendor/etc/camera/assets/filter_ziran/effect_content.json
-vendor/etc/camera/assets/filter_ziran/filter.png
-vendor/etc/camera/assets/filter_ziran/filter_effect3.fs
-vendor/etc/camera/assets/filter_ziran/filter_effect3.vs
-vendor/etc/camera/assets/filter_ziran/params.json
 vendor/etc/camera/remosaic/GN9_HC_DL_4921603794670873694.bin
-vendor/etc/camera/AI_Seg_v0.2.29.1_nothing.bin
-vendor/etc/camera/CFR_para4_Nothing_23111_UW_v8200-4.bin
-vendor/etc/camera/CFR_para4_Nothing_23111_W_v8210-1.bin
-vendor/etc/camera/CFR_para4_Nothing_23114_W_v8220.bin
-vendor/etc/camera/M_Rater_Defect_v1.0.14_arm64_ppl3.model
-vendor/etc/camera/Ndot-55.otf
 vendor/etc/camera/Vega_Align_occlusion_106_13.17.12_fp16_arm64.model
+vendor/etc/camera/Vega_Align_occlusion_106_13.17.79_fp16_arm64.model
 vendor/etc/camera/Vega_Detect_CommonFace_Gray_4.13.2_fp16_arm64.model
+vendor/etc/camera/Vega_Detect_CommonFace_Gray_keep_fix_1.3.0_fp16_arm64.model
 vendor/etc/camera/Vega_Track_FaceRect20cls_1.5.0_fp16_arm64.model
-vendor/etc/camera/ai_scene_model.model
+vendor/etc/camera/Vega_Track_FaceRect20cls_2.2.0_fp16_arm64.model
 vendor/etc/camera/algo_policy.bin
-vendor/etc/camera/anc_detect_model.bin
-vendor/etc/camera/anc_fullhdr_algo_cache
-vendor/etc/camera/anc_fullhdr_binary_cache
-vendor/etc/camera/anc_fullhdr_model
-vendor/etc/camera/anc_object_detection_cl_v1.0.0.mdl
-vendor/etc/camera/anc_supermoon_params.json
 vendor/etc/camera/binary_cache
 vendor/etc/camera/bokeh_caldata_uw_golden.bin
-vendor/etc/camera/cache_front_main
-vendor/etc/camera/cache_rear_main
-vendor/etc/camera/cache_rear_tele
-vendor/etc/camera/cache_rear_uw
-vendor/etc/camera/capture_cache
 vendor/etc/camera/capture_model
-vendor/etc/camera/capture_policy
 vendor/etc/camera/config.json
-vendor/etc/camera/dense_model.pack
-vendor/etc/camera/detect_model.pack
-vendor/etc/camera/dgain_mask_front_main.bin
-vendor/etc/camera/dgain_mask_rear_main.bin
-vendor/etc/camera/dgain_mask_rear_tele.bin
-vendor/etc/camera/dgain_mask_rear_uw.bin
-vendor/etc/camera/dof_dep_cache
-vendor/etc/camera/dof_dep_model
-vendor/etc/camera/dof_dep_policy
-vendor/etc/camera/dof_mecp.bin
-vendor/etc/camera/dof_seg_cache
-vendor/etc/camera/dof_seg_model
-vendor/etc/camera/dof_seg_policy
 vendor/etc/camera/dualcam_cali_golden_T_W_1.bin
 vendor/etc/camera/dualcam_cali_golden_W_UW_1.bin
-vendor/etc/camera/effect_param_front_main.json
-vendor/etc/camera/effect_param_rear_main.json
-vendor/etc/camera/effect_param_rear_tele.json
-vendor/etc/camera/effect_param_rear_uw.json
-vendor/etc/camera/facesr.sensetime.model
-vendor/etc/camera/hc_opr_lite_cache
-vendor/etc/camera/hc_opr_lite_cache_front_main
-vendor/etc/camera/hc_opr_lite_cache_rear_main
-vendor/etc/camera/hc_opr_lite_cache_rear_tele
-vendor/etc/camera/hc_opr_lite_cache_rear_uw
 vendor/etc/camera/ldc_cap_cache
 vendor/etc/camera/ldc_cap_model
 vendor/etc/camera/ldc_cap_policy
 vendor/etc/camera/morpho_raw_deep_denoise_model.bin
 vendor/etc/camera/morpho_raw_deep_denoise_tuning_params.xml
-vendor/etc/camera/nothing_node.bin
-vendor/etc/camera/nothing_noise_stat.bin
-vendor/etc/camera/nothing_pipeline.bin
-vendor/etc/camera/ntcamoverridesettings.txt
 vendor/etc/camera/param.bin
-vendor/etc/camera/preview_cache
-vendor/etc/camera/preview_model
-vendor/etc/camera/preview_policy
-vendor/etc/camera/sdk_params_back.json
-vendor/etc/camera/sdk_params_front.json
-vendor/etc/camera/sdk_params_front_bokeh.json
-vendor/etc/camera/sg_cap_cache
-vendor/etc/camera/sg_cap_model
-vendor/etc/camera/sg_cap_policy
-vendor/etc/camera/sg_pre_model
-vendor/etc/camera/singlebokeh_mecp.bin
-vendor/etc/camera/siq_ocl_cache_front_main
-vendor/etc/camera/siq_ocl_cache_rear_main
-vendor/etc/camera/siq_ocl_cache_rear_tele
-vendor/etc/camera/siq_ocl_cache_rear_uw
-vendor/etc/camera/sr_params.xml
-vendor/etc/camera/superiq_model_front_main
-vendor/etc/camera/superiq_model_rear_main
-vendor/etc/camera/superiq_model_rear_tele
-vendor/etc/camera/superiq_model_rear_uw
 vendor/etc/camera/vidhance.lic
 vendor/etc/camera/vidhance_calibration
 vendor/etc/default_pd_calibration.bin
@@ -922,8 +688,12 @@ vendor/bin/crossbuild/DataSet/SQLiteModule/db/pipeline/mt6878/ParameterDB_pipeli
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tone/mt6878/ParameterDB_tone.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tone/ParameterDB_tone.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/default_sensor/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/default_sensor/ISP_mapping.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/default_sensor/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/default_sensor/ISP_param.db;MAKE_COPY_RULE_ONLY
+vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc02m1_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc02m1_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
+vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc02m1_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc02m1_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
+vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8syx_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8syx_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
+vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8syx_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8syx_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8xl_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8xl_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8xl_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc08a8xl_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3c2_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3c2_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
@@ -934,57 +704,21 @@ vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3cofilm_mipi_raw/mt
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3cofilm_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3cofilm_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3ctxd_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3ctxd_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3ctxd_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3ctxd_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx214_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx214_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx214_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx214_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx334_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx334_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx334_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx334_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx334sub_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx334sub_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx334sub_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx334sub_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx481_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx481_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx481_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx481_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx499_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx499_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx499_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx499_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx586_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx586_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx586_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx586_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx598_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx598_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx598_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx598_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx709_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx709_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx709_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx709_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx709o_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx709o_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx709o_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx709o_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx758_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx758_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx758_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx758_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766dual_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766dual_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766dual_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766dual_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766dualo_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766dualo_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766dualo_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766dualo_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766o_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766o_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766o_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx766o_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx866_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx866_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx866_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx866_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
+vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3cxl_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3cxl_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
+vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3cxl_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/gc16b3cxl_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx882_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx882_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx882_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx882_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx882txd_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx882txd_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx882txd_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx882txd_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx989_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx989_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx989_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/imx989_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/mt6878/ISP_info.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ISP_info.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov48b_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov48b_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov48b_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov48b_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov50d40_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov50d40_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov50d40_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov50d40_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov50d40ofilm_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov50d40ofilm_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov50d40ofilm_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/ov50d40ofilm_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3m5sx_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3m5sx_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3m5sx_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3m5sx_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3m5sxo_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3m5sxo_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3m5sxo_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3m5sxo_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3p9sp_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3p9sp_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
-vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3p9sp_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5k3p9sp_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5kgn9sp_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5kgn9sp_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5kgn9sp_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5kgn9sp_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
+vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5kgn9spofxian_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5kgn9spofxian_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
+vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5kgn9spofxian_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/s5kgn9spofxian_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/sc202cs_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/sc202cs_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/sc202cs_mipi_raw/mt6878/ISP_param.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/sc202cs_mipi_raw/ISP_param.db;MAKE_COPY_RULE_ONLY
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/sc202cssj_mipi_raw/mt6878/ISP_mapping.db;SYMLINK=vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB/sc202cssj_mipi_raw/ISP_mapping.db;MAKE_COPY_RULE_ONLY
@@ -995,19 +729,19 @@ vendor/bin/crossbuild/DataSet/SQLiteModule/db/tuning_DB_aov/mt6878/ISP_info.db;S
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/port_select.db;MAKE_COPY_RULE_ONLY
 
 # Display
+vendor/etc/displayconfig/display_id_4627039422300187648.xml
 vendor/etc/init/init.touch.rc
 vendor/firmware/FT3683G_Conf_MultipleTest_BOE.ini
 vendor/firmware/FT3683G_Conf_MultipleTest_VXN.ini
 vendor/firmware/ft3683g_boe.bin
 vendor/firmware/ft3683g_vxn.bin
 vendor/firmware/valhall-1691526.wa
-vendor/lib64/libion_mtk.so
-vendor/lib64/libion_ulit.so
-vendor/lib64/libpixelflinger.so
 
 # DRM (Widevine)
 vendor/apex/com.google.android.widevine.nonupdatable.apex
+vendor/lib64/libTEECommon.so
 vendor/lib64/liboemcrypto.so
+vendor/lib64/liburee_meta_drmkeyinstall.so
 
 # Fingerprint
 vendor/bin/hw/vendor.nothing.hardware.biometrics.fingerprint-service
@@ -1047,7 +781,11 @@ vendor/lib64/hw/mtkflp.default.so
 vendor/lib64/hw/mtkgeofence.default.so
 vendor/lib64/hw/vendor.mediatek.hardware.gnss-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.gnss.batching-impl.so
+vendor/lib64/mt6878/libDR.so;SYMLINK=vendor/lib64/libDR.so
 vendor/lib64/mt6878/libmnl.so;SYMLINK=vendor/lib64/libmnl.so
+vendor/lib64/libapmonitor_vendor.so
+vendor/lib64/vendor.mediatek.hardware.apmonitor-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/vendor.mediatek.hardware.gnss-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.gnss.batching-V1-ndk.so
 
@@ -1110,11 +848,12 @@ vendor/lib64/libNoFpsActor.so
 vendor/lib64/libappgamepq.so
 vendor/lib64/libcomposer_ext.so
 vendor/lib64/libged.so
-vendor/lib64/libgpu_aux.so
 vendor/lib64/libgpud.so
 vendor/lib64/libgralloc_extra.so
 vendor/lib64/libgralloc_metadata.so
 vendor/lib64/libgralloctypes_mtk.so
+vendor/lib64/libion_mtk.so
+vendor/lib64/libion_ulit.so
 vendor/lib64/libladder.so
 vendor/lib64/libsilkybrightnesscore.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so
@@ -1180,8 +919,6 @@ vendor/lib64/mt6878/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
 vendor/lib64/libadpcmdec_mtk.so
 vendor/lib64/libbwc.so
 vendor/lib64/libmp3dec_mtk.so
-vendor/lib64/libvcodec_oal.so
-vendor/lib64/libvcodecdrv_header_stub.so
 
 # Media (Codec2)
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
@@ -1215,16 +952,6 @@ vendor/bin/hw/vendor.mediatek.hardware.mmagent-service
 vendor/etc/init/vendor.mediatek.hardware.mmagent-service.rc
 vendor/lib64/mt6878/libmmagent.so;SYMLINK=vendor/lib64/libmmagent.so
 vendor/lib64/vendor.mediatek.hardware.mmagent-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
-vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
-
-# MMS
-vendor/lib64/vendor.mediatek.hardware.mms@1.0.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.1.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.2.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.3.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
 
 # Native public libraries
 vendor/etc/public.libraries.txt
@@ -1246,32 +973,16 @@ vendor/lib64/mt6878/libneuron_wrapper.so;SYMLINK=vendor/lib64/libneuron_wrapper.
 vendor/lib64/mt6878/libnir_neon_driver.so;SYMLINK=vendor/lib64/libnir_neon_driver.so
 vendor/lib64/APUWareApusysAidlServer.so
 vendor/lib64/APUWareUtilsAidlServer.so
-vendor/lib64/libaimemc.so
 vendor/lib64/libapu_mdw.so
 vendor/lib64/libapu_mdw_batch.so
-vendor/lib64/libapusys.so
 vendor/lib64/libarmnn.so
 vendor/lib64/libarmnn_ndk.mtk.vndk.so;FIX_SONAME
-vendor/lib64/libasn1c_core.so
-vendor/lib64/libasn1c_mapi.so
-vendor/lib64/libasn1c_mdmi.so
 vendor/lib64/libcmdl.so
 vendor/lib64/libcmdl_ndk.mtk.vndk.so
-vendor/lib64/libneuroeara.so
-vendor/lib64/libneuron_graph_delegate.mtk.so
-vendor/lib64/libneuron_platform.so
-vendor/lib64/libneuropilot_hal_utils.so
-vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
 vendor/lib64/libnpagent.so
-vendor/lib64/libnpagent_server.so
 vendor/lib64/libtflite_mtk.so
-vendor/lib64/libtranslator_mapi_v3.0.so
-vendor/lib64/libtranslator_mdmi_v2.8.2.so
-vendor/lib64/libtranslator_utils.so
 vendor/lib64/vendor.mediatek.hardware.apuware.apusys-V3-ndk.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
-vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.1.so
@@ -1290,7 +1001,6 @@ vendor/etc/init/vendor.mediatek.hardware.nvram-sevice.rc
 vendor/lib64/hw/vendor.mediatek.hardware.nvram-impl.so
 vendor/lib64/libcustom_nvram.so
 vendor/lib64/libfile_op.so
-vendor/lib64/libhwm.so
 vendor/lib64/libnvram.so
 vendor/lib64/libnvram_sec.so
 vendor/lib64/vendor.mediatek.hardware.nvram-V1-ndk.so
@@ -1317,6 +1027,7 @@ vendor/lib64/mt6878/libpq_cust_base.so;SYMLINK=vendor/lib64/libpq_cust_base.so
 vendor/lib64/mt6878/libpq_sec.so;SYMLINK=vendor/lib64/libpq_sec.so
 vendor/lib64/mt6878/libpqconfig.so;SYMLINK=vendor/lib64/libpqconfig.so
 vendor/lib64/mt6878/libpqparamparser.so;SYMLINK=vendor/lib64/libpqparamparser.so
+vendor/lib64/libhdrvideo.so
 vendor/lib64/libpqframework.so
 vendor/lib64/libpqhdrmetaparser.so
 vendor/lib64/libpqsharememory.so
@@ -1325,12 +1036,13 @@ vendor/lib64/libpqxmlflagparser.so
 vendor/lib64/libpqxmlparser.so
 vendor/lib64/librgbwlightsensor.so
 vendor/lib64/libscltm.so
+vendor/lib64/libvividhdr.so
 vendor/lib64/vendor.mediatek.hardware.mmlpq-V3-ndk.so
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V2-ndk.so
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so
 
-# Power
+# Power (Shared)
 vendor/lib64/vendor.mediatek.hardware.power@1.1.so
 vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 
@@ -1351,9 +1063,7 @@ vendor/lib64/libcarrierconfig.so
 vendor/lib64/libccci_util.so
 vendor/lib64/libgwsdv2-ril.so
 vendor/lib64/libgwsdv3-ril.so
-vendor/lib64/libipsec_ims_shr.so
 vendor/lib64/libmipc.so
-vendor/lib64/libmmprofile.so
 vendor/lib64/libmnetlink_v104.so
 vendor/lib64/libmtk-ril.so
 vendor/lib64/libmtk-rilop.so
@@ -1361,9 +1071,9 @@ vendor/lib64/libmtkconfig.so
 vendor/lib64/libmtkconfigutils.so
 vendor/lib64/libmtkcutils.so
 vendor/lib64/libmtkhardware_legacy.so
-vendor/lib64/libmtkisp_metadata_v2.so
 vendor/lib64/libmtkisp_metadata_v3.so
 vendor/lib64/libmtkmipc-ril.so
+vendor/lib64/libmtkmipc-rilop.so
 vendor/lib64/libmtknetcap.so
 vendor/lib64/libmtknetutils.so
 vendor/lib64/libmtkproperty.so
@@ -1372,14 +1082,10 @@ vendor/lib64/libmtkrilutils.so
 vendor/lib64/libmtksysutils.so
 vendor/lib64/libmtktinyxml.so
 vendor/lib64/libmtkutils.so
-vendor/lib64/libprotobuf-cpp-full-21.7.so
-vendor/lib64/libprotobuf-cpp-lite-21.7.so
 vendor/lib64/libratconfig.so
 vendor/lib64/librcs_interface.so
 vendor/lib64/librcs_volte_core.so
 vendor/lib64/librilfusion.so
-vendor/lib64/libsimlock.so
-vendor/lib64/libsimmelock.so
 vendor/lib64/libstorage_otp.so
 vendor/lib64/libsysenv.so
 vendor/lib64/libtrm.so
@@ -1387,8 +1093,6 @@ vendor/lib64/libvia-ril.so
 vendor/lib64/libviamipc-ril.so
 vendor/lib64/libwpfa.so
 vendor/lib64/vendor.mediatek.hardware.clientapi-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mdmonitor-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mdmonitor@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.assist-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.atci-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.cap-V1-ndk.so
@@ -1410,8 +1114,8 @@ vendor/lib64/vendor.mediatek.hardware.rcs-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.rcs@2.0.so
 
 # Radio (Configs)
-vendor/etc/apdb/APDB_MT6878___W2452
-vendor/etc/apdb/APDB_MT6878___W2452_ENUM
+vendor/etc/apdb/APDB_MT6878___W2528
+vendor/etc/apdb/APDB_MT6878___W2528_ENUM
 vendor/etc/ecc_list.xml
 vendor/etc/ecc_list_OP01.xml
 vendor/etc/ecc_list_OP02.xml
@@ -1441,6 +1145,7 @@ vendor/lib64/hw/sensors.mediatek.V2.0.so;SYMLINK=vendor/lib64/hw/sensors.mt6878.
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhfmanagerwrapper.so
 vendor/lib64/libhidparser.so
+vendor/lib64/libhwm.so
 vendor/lib64/libksensor.so
 vendor/lib64/libsensor_extension.so
 vendor/lib64/vendor.noth.hardware.sensor.sensor_extension-V1-ndk.so
@@ -1448,8 +1153,6 @@ vendor/lib64/vendor.noth.hardware.sensor.sensor_extension-V1-ndk.so
 # Thermal
 vendor/bin/thermal_core
 vendor/bin/thermal_intf
-vendor/etc/advance_thermal_mitigation/atmc.json
-vendor/etc/advance_thermal_mitigation/atmc_ind.json
 vendor/etc/init/init.thermal_core.rc
 vendor/etc/thermal/disable_skin_control.conf
 vendor/etc/thermal/disable_thermal.conf
@@ -1472,7 +1175,6 @@ vendor/etc/thermal/thermal_policy_12.conf
 vendor/etc/thermal/thermal_policy_13.conf
 vendor/etc/thermal/thermal_policy_14.conf
 vendor/etc/thermal/thermal_policy_15.conf
-vendor/etc/fstb.cfg
 
 # Tether Offload
 vendor/bin/hw/tetheroffloadservice
@@ -1483,12 +1185,6 @@ vendor/lib64/libifcutils_mtk.so
 
 # VPU
 vendor/lib64/libmvpu_cic_ci_compiler.so
-vendor/lib64/libmvpu_cic_ci_compiler_25.so
-vendor/lib64/libmvpu_clc_14_cl_compiler_25.so
-vendor/lib64/libmvpu_clc_14_mvpu_debuginfo_25.so
-vendor/lib64/libmvpu_clc_14_mvpu_elf_25.so
-vendor/lib64/libmvpu_clc_14_mvpu_isa_25.so
-vendor/lib64/libmvpu_clc_14_mvpu_utility_25.so
 vendor/lib64/libmvpu_clc_cl_compiler.so
 vendor/lib64/libmvpu_clc_mvpu_debuginfo.so
 vendor/lib64/libmvpu_clc_mvpu_elf.so
@@ -1496,26 +1192,14 @@ vendor/lib64/libmvpu_clc_mvpu_utility.so
 vendor/lib64/libmvpu_clc_vpu_isa.so
 vendor/lib64/libmvpu_config.so
 vendor/lib64/libmvpu_engine.so
-vendor/lib64/libmvpu_engine_25.so
-vendor/lib64/libmvpu_engine_25_pub.so
 vendor/lib64/libmvpu_engine_pub.so
 vendor/lib64/libmvpu_pattern.so
-vendor/lib64/libmvpu_pattern_25.so
-vendor/lib64/libmvpu_pattern_25_pub.so
 vendor/lib64/libmvpu_pattern_pub.so
-vendor/lib64/libmvpu_runtime.so
-vendor/lib64/libmvpu_runtime_25.so
-vendor/lib64/libmvpu_runtime_25_pub.so
 vendor/lib64/libmvpu_runtime_builtin.so
-vendor/lib64/libmvpu_runtime_builtin_25.so
 vendor/lib64/libmvpu_runtime_pub.so
 vendor/lib64/libmvpu_wrapper.so
-vendor/lib64/libmvpuop25_mtk_cv.so
-vendor/lib64/libmvpuop25_mtk_nn.so
 vendor/lib64/libmvpuop_mtk_cv.so
 vendor/lib64/libmvpuop_mtk_nn.so
-vendor/lib64/libvpu.so
-vendor/lib64/libvpu5.so
 
 # TEE
 vendor/app/mcRegistry/020f0000000000000000000000000000.drbin
@@ -1551,17 +1235,11 @@ vendor/etc/init/tee.rc
 vendor/etc/init/trustonic.rc
 vendor/etc/init/vendor.trustonic.tee@1.1-service.rc
 vendor/lib64/libMcClient.so
-vendor/lib64/libTEECommon.so
 vendor/lib64/vendor.trustonic.tee.tui@1.0.so
 vendor/lib64/vendor.trustonic.tee@1.0.so
 vendor/lib64/vendor.trustonic.tee@1.1.so
 
 # Vibrator (Richtap)
-vendor/etc/aac/ID05-2_6kHz.txt
-vendor/etc/aac/ID06-2_6kHz.txt
-vendor/etc/aac/ID07-2_6kHz.txt
-vendor/etc/aac/ID08-2_6kHz.txt
-vendor/etc/aac/ID09-2_6kHz.txt
 vendor/etc/aac_richtap.config
 vendor/lib64/libaacvibrator.so
 
@@ -1580,10 +1258,6 @@ vendor/etc/wifi/wpa_supplicant.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 vendor/lib64/libwapi.so
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
-vendor/lib64/libwifical.so
-vendor/lib64/libwifinvram.so
-vendor/lib64/libwifinvramdata.so
-vendor/lib64/libwpa_client.so
 vendor/lib64/vendor.mediatek.hardware.netdagent-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 

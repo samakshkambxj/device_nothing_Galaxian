@@ -235,6 +235,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/sku/,$(TARGET_COPY_OUT_ODM)/etc)
 
+# Security Patch
+BOOT_SECURITY_PATCH := 2025-06-05
+INIT_BOOT_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
+VENDOR_SECURITY_PATCH := 2025-09-05
+
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.boot_security_patch=$(BOOT_SECURITY_PATCH)
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \

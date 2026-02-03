@@ -141,10 +141,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
-# Security patch
-VENDOR_SECURITY_PATCH := 2025-09-05
-BOOT_SECURITY_PATCH := $(VENDOR_SECURITY_PATCH)
-
 # Verified boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
