@@ -1,6 +1,3 @@
-import /vendor/etc/init/hw/init.mtkgki.rc
-import /vendor/etc/init/hw/init.pstore.rc
-
 # MTK project .rc configure
 
 on init

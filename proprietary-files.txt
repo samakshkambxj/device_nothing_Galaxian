@@ -188,10 +188,6 @@ vendor/etc/smartpa_param/tfa98xx_voice.bin
 # Audio firmware
 vendor/firmware/tfa98xx.cnt
 
-# Board
-vendor/bin/init.board_id.sh
-vendor/etc/init/hw/init.board_id.rc
-
 # Bluetooth (Driver)
 vendor/etc/init/init.bt_drv.rc
 vendor/lib64/libbluetooth_mtk.so
