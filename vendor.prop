@@ -5,13 +5,20 @@ audio.deep_buffer.media=true
 audio.offload.min.duration.secs=30
 audio.offload.video=true
 persist.vendor.audio.usb.offload=true
+persist.vendor.connsys.fm_chipid=connac2x
 persist.vendor.speech.usb.offload=true
-ro.audio.usb.period_us=5000
-ro.vendor.mtk_audio_tuning_tool_ver=V1
-ro.vendor.mtk_hifiaudio_support=1
 vendor.audio.powerhal.latency.ul=false
 vendor.audio.powerhal.power.dl=true
 vendor.audio.powerhal.power.ul=true
+vendor.audio.usb.iems.period_us=5000
+
+# Bluetooth
+persist.bluetooth.a2dp_offload.disabled=false
+persist.bluetooth.leaudio_offload.disabled=true
+ro.bluetooth.a2dp_offload.supported=true
+ro.bluetooth.leaudio_offload.supported=false
+ro.vendor.bt.connac3=no
+ro.vendor.bt.platform=6878
 
 # Camera
 camera.disable_zsl_mode=1
@@ -29,44 +36,42 @@ persist.vendor.camera3.pipeline.bufnum.min.low_ram.imgo=6
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.lcso=6
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.rrzo=6
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.rsso=6
-persist.vendor.vt.camera.rotate=1
+ro.vendor.afbc.enable=3
 ro.vendor.camera.directfdyuv.support=1
 ro.vendor.camera.insensorzoom.support=1
 ro.vendor.camera.isp.support.colorspace=0
 ro.vendor.camera3.zsl.default=260
+ro.vendor.jpeg_decode_sw_opt=1
+ro.vendor.mtk_cam_security_support=1
 ro.vendor.mtk_camera_app_version=3
-vendor.camera.mdp.cz.enable=1
-vendor.camera.mdp.dre.enable=1
-vendor.mtk.camera.app.fd.video=1
+ro.vendor.mtk_mvpu_support=0
+
+# Connectivity
+persist.vendor.connsys.chipid=-1
+persist.vendor.connsys.dynamic.dump=0
+persist.vendor.connsys.patch.version=-1
+vendor.connsys.driver.ready=no
 
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
 
-# Display
-ro.vendor.display.array.auto.backlight=360,360,511,821,1154,1273,1324,1471,1599,1671,1832,1976,2119,2358,2436,2881,2881,3442,3672,4094
-ro.vendor.display.array.auto.lux=0,1,4,10,25,60,150,390,620,750,1000,1300,1700,2800,3500,4500,7000,8000,20000,40000
-ro.vendor.display.array.auto.nits=7,7,14,34,70,84,90,111,132,145,178,211,248,318,344,500,500,750,900,1300
-ro.vendor.display.array.backlight=360,360,511,821,1154,1273,1324,1471,1599,1671,1832,1976,2119,2358,2436,2881,2881,3442
-ro.vendor.display.array.hbm.backlight=3442,3672,4094
-ro.vendor.display.array.hbm.maxlux=8000,20000,40000
-ro.vendor.display.array.hbm.minlux=7000,18000,38000
-ro.vendor.display.array.lux=0,1,4,10,25,60,150,390,620,750,1000,1300,1700,2800,3500,4500,7000,8000
-ro.vendor.display.array.nits=7,7,14,34,70,84,90,111,132,145,178,211,248,318,344,500,500,750
-ro.vendor.display.hbm.maxbacklight=4095
-ro.vendor.display.low_brightness_threshold=0.341
-ro.vendor.display.normal.maxbacklight=3442
-ro.vendor.display.normal.minbacklight=50
-ro.vendor.display.safe.backlight=2881
-ro.vendor.display.set_doze_fps_modeid=3
-ro.vendor.display.thermal_limit_brightness=4095,3797,3545,3350,2881,2745,2603,2453,2299,2125,1931
-ro.vendor.display.user.control.lux=0,100,1000,2500,4500,8000
-vendor.display.enable_ic_hw_roundedcorner=1
+# DRM
+drm.service.enabled=true
+
+# FM
+ro.vendor.fm.platform=connac2x
 
 # Gatekeeper
 ro.hardware.gatekeeper=trustonic
 
-# Graphics
-ro.hardware.egl=meow
+# GPS
+ro.vendor.mtk_log_hide_gps=0
+
+# Graphic
+debug.mediatek.disp_decompress=1
+debug.renderengine.backend=skiaglthreaded
+ro.hardware.egl=mali
+ro.hardware.gralloc=common
 ro.hardware.hwcomposer=mtk_common
 ro.hardware.vulkan=mali
 ro.opengles.version=196610
@@ -126,45 +131,48 @@ ro.vendor.arm.gralloc.shared_access_usage_flags=0x10000000
 ro.vendor.arm.gralloc.shared_access_usage_mask=0x50000000
 ro.vendor.composer_version=3.2
 ro.vendor.mml.mtk_mml_support=1
-ro.vendor.mtk_aal_support=0
+ro.vendor.mtk.gpud.mm.fbc.disable=false
 ro.vendor.mtk_aod_support=1
+ro.vendor.mtk_backlight_hwc_support=1
+ro.vendor.mtk_hdr_video_support=1
 ro.vendor.mtk_ovl_bringup=0
-ro.vendor.mtk_prefer_64bit_proc=1
 
 # Keystore
 ro.hardware.kmsetkey=trustonic
 
+# LMK
+ro.lmk.downgrade_pressure=60
+ro.lmk.kill_timeout_ms=100
+ro.lmk.psi_complete_stall_ms=700
+ro.lmk.swap_free_low_percentage=10
+ro.lmk.swap_util_max=100
+ro.lmk.thrashing_limit=100
+ro.lmk.thrashing_limit_decay=10
+
 # Media
-media.c2.dmabuf.padding=512
+debug.stagefright.c2inputsurface=-1
+media.c2.dmabuf.padding=3072
 media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.vendor.mtk.c2.vdec.fmt.support.level=2
 ro.vendor.mtk.c2.vdec.vpp.turnkey.memc=1
-ro.vendor.mtk_hdr_video_support=1
-ro.vendor.mtk_video_hevc_enc_support=1
+ro.vendor.mtk_sec_video_path_support=1
 vendor.media.omx=0
 vendor.mtk.vdec.decode.error.handle.mode=1
 vendor.mtk.vdec.waitkeyframeforplay=9
-vendor.mtk_thumbnail_optimization=true
-vendor.video.framework.thumbnail.SurfaceMode=1
 
-# Netflix
-ro.netflix.bsp_rev=MT6878-38373-1
+# Mediatek
+ro.vendor.mediatek.platform=MT6878
 
-# Neural Networks
+# Neural network
 ro.vendor.mtk_nn.option=A,B,C,D,E,F,G,Z
 ro.vendor.mtk_nn_baseline_support=1
 ro.vendor.mtk_nn_quant_preferred=1
 ro.vendor.mtk_nn_support=1
 
-# NTF
-ro.vendor.nothing.feature.base=0x1004458438124a040126b4247b97ffL
-ro.vendor.nothing.feature.diff.product.GalagaEEA=0x8000000000000000000000L
-ro.vendor.nothing.feature.diff.product.GalagaIND=0x10000000000000000000000L
-ro.vendor.nothing.feature.diff.product.GalagaJPN=0x120000000000000000000000L
-
-# Picture Quality
-debug.mediatek.appgamepq_compress=1
-debug.mediatek.disp_decompress=1
+# PQ
+persist.vendor.sys.pq.disp.ccorr.silky.brightness=0
+persist.vendor.sys.pq.disp.gamma.silky.brightness=0
+persist.vendor.sys.pq.disp_gamma_silky_brightness_by_hwc=0
 persist.vendor.sys.pq.mtk_disp_clarity_support=0
 ro.vendor.mtk_pq_color_mode=1
 ro.vendor.mtk_pq_support=2
@@ -190,7 +198,6 @@ ro.vendor.pq.mtk_ds_support=0
 ro.vendor.pq.mtk_hdr10_panel_dtmo_support=0
 ro.vendor.pq.mtk_hdr10_plus_recording_support=0
 ro.vendor.pq.mtk_hfg_support=0
-ro.vendor.pq.mtk_libaibld_name=libaibld.nn6.so
 ro.vendor.pq.mtk_mdp_ccorr_support=0
 ro.vendor.pq.mtk_mdp_lite_pq_support=0
 ro.vendor.pq.mtk_mml_c3d_support=0
@@ -203,18 +210,11 @@ ro.vendor.pq.mtk_ultra_dimming_support=0
 ro.vendor.pq.mtk_ultra_resolution_support=0
 ro.vendor.pq.mtk_video_transition=0
 
-# Platform
-ro.board.platform=mt6878
-ro.soc.manufacturer=Mediatek
-ro.soc.model=MT6878
-ro.vendor.mediatek.platform=MT6878
-
-# Radio
+# Radio / IMS
 persist.radio.multisim.config=dsds
+persist.vendor.ims_support=1
 persist.vendor.md_c2k_cap_dep_check=0
 persist.vendor.mims_support=2
-persist.vendor.mtk.vodata.allow_rat=1
-persist.vendor.mtk.vodata.data_mode=1
 persist.vendor.mtk.volte.enable=1
 persist.vendor.mtk_ct_volte_support=3
 persist.vendor.mtk_dynamic_ims_switch=1
@@ -224,84 +224,110 @@ persist.vendor.radio.msimmode=dsds
 persist.vendor.radio.mtk_dsbp_support=3
 persist.vendor.radio.mtk_ps2_rat=N/L/W/G
 persist.vendor.radio.mtk_ps3_rat=G
+persist.vendor.radio.nr_display_rule=0
 persist.vendor.radio.smart.data.switch=1
+persist.vendor.vilte_support=1
 persist.vendor.viwifi_support=1
+persist.vendor.volte_support=1
+persist.vendor.vt.camera.rotate=1
 persist.vendor.wfc.cnop_vowifi=1
-ro.telephony.default_network=33,33,33,33
+ro.telephony.default_network=32,32,32,32
 ro.telephony.iwlan_operation_mode=AP-assisted
-ro.telephony.sim.count=2
-ro.vendor.md_auto_setup_ims=1
+ro.vendor.md_log_memdump_wait=15
 ro.vendor.md_prop_ver=1
 ro.vendor.mtk_c2k_lte_mode=0
-ro.vendor.mtk_data_config=1
-ro.vendor.mtk_eccci_c2k=1
+ro.vendor.mtk_config_max_dram_size=
 ro.vendor.mtk_external_sim_only_slots=0
-ro.vendor.mtk_external_sim_support=1
 ro.vendor.mtk_fd_support=1
 ro.vendor.mtk_gwsd_capability=2
+ro.vendor.mtk_gwsd_support=1
 ro.vendor.mtk_lte_support=1
 ro.vendor.mtk_mcf_support=1
-ro.vendor.mtk_md_world_mode_support=1
 ro.vendor.mtk_mipc_support=1
-ro.vendor.mtk_modem_monitor_support=1
+ro.vendor.mtk_mobile_management=1
 ro.vendor.mtk_protocol1_rat_config=N/Lf/Lt/W/G
 ro.vendor.mtk_ps1_rat=N/Lf/Lt/W/G
 ro.vendor.mtk_ril_mode=c6m_1rild
-ro.vendor.mtk_rild_read_imsi=1
 ro.vendor.mtk_sim_card_onoff=3
 ro.vendor.mtk_sim_hot_swap_common_slot=1
 ro.vendor.mtk_telephony_add_on_policy=0
 ro.vendor.mtk_thin_md_telephony_support_mode=0
+ro.vendor.mtk_wappush_support=1
 ro.vendor.mtk_world_phone_policy=0
 ro.vendor.num_md_protocol=2
+ro.vendor.ril.set_sbp_place=0
 ro.vendor.sim_me_lock_mode=3
+ro.vendor.vodata_support=1
+ro.vendor.vt.mtk_thin_md_support_mode=0
 ro.vendor.vt_hevc_support=1
 telephony.active_modems.max_count=2
-telephony.lteOnCdmaDevice=1
+vendor.rild.libargs=-d /dev/ttyC0
+vendor.rild.libpath=mtk-ril.so
 
-# Sensors
-ro.vendor.mtk.sensor.support=yes
+# MVPU
+ro.vendor.mtk_mvpu_security_support=0
 
-# SurfaceFlinger
-debug.renderengine.backend=skiagl
+# Netflix
+ro.netflix.bsp_rev=MT6878-38373-1
+
+# NTF
+ro.vendor.nothing.feature.base=0x1004458438124a040126b4247b97ffL
+ro.vendor.nothing.feature.diff.product.GalagaEEA=0x8000000000000000000000L
+ro.vendor.nothing.feature.diff.product.GalagaIND=0x10000000000000000000000L
+ro.vendor.nothing.feature.diff.product.GalagaJPN=0x120000000000000000000000L
+
+# NVRAM
+ro.vendor.mtk_eccci_c2k=1
+
+# Surfaceflinger
 debug.sf.disable_backpressure=1
-debug.sf.early.app.duration=15600000
-debug.sf.early.sf.duration=14600000
-debug.sf.earlyGl.app.duration=15600000
-debug.sf.earlyGl.sf.duration=14600000
+debug.sf.early.app.duration=12300000
+debug.sf.early.sf.duration=11600000
+debug.sf.earlyGl.app.duration=12300000
+debug.sf.earlyGl.sf.duration=11600000
 debug.sf.enable_gl_backpressure=0
 debug.sf.enable_hwc_vds=0
-debug.sf.hwc.min.duration=2000000
-debug.sf.late.app.duration=15600000
-debug.sf.late.sf.duration=14600000
-debug.sf.set_binder_thread_rt=1
+debug.sf.enable_transaction_tracing=false
+debug.sf.late.app.duration=12300000
+debug.sf.late.sf.duration=11600000
+debug.sf.treat_170m_as_sRGB=1
 debug.sf.use_phase_offsets_as_durations=1
+persist.sys.sf.native_mode=260
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.game_default_frame_rate_override=60
 ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.max_frame_buffer_acquired_buffers=4
 ro.surface_flinger.primary_display_orientation=ORIENTATION_0
 ro.surface_flinger.protected_contents=true
 ro.surface_flinger.set_idle_timer_ms=3000
-ro.surface_flinger.set_touch_timer_ms=3000
+ro.surface_flinger.set_touch_timer_ms=200
 ro.surface_flinger.uclamp.min=160
 ro.surface_flinger.wcg_composition_dataspace=143261696
 
-# TEE
-ro.vendor.mtk_tee_gp_support=1
-ro.vendor.mtk_trustonic_tee_support=1
+# Thermal
+ro.vendor.mtk_thermal_2_0=1
 
 # WiFi
 ro.vendor.wifi.sap.concurrent.iface=ap1
 ro.vendor.wifi.sap.interface=ap0
-ro.vendor.wlan.chrdev=wmt_chrdev_wifi_connac2
-ro.vendor.wlan.gen=gen4m_6878
+wifi.direct.interface=p2p0
+wifi.interface=wlan0
 
 # ZRAM writeback
-ro.zram.first_wb_delay_mins=180
+ro.zram.first_wb_delay_mins=1440
 ro.zram.mark_idle_delay_mins=60
 ro.zram.periodic_wb_delay_hours=24
 
 # Zygote
 zygote.critical_window.minute=10
+
+# Trash
+debug.mediatek.appgamepq_compress=1
+ro.vendor.mtk_data_config=1
+ro.vendor.mtk_modem_monitor_support=1
+ro.vendor.mtk_rild_read_imsi=1
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_trustonic_tee_support=1
+ro.vendor.mtk_video_hevc_enc_support=1
+vendor.camera.mdp.cz.enable=1
+vendor.camera.mdp.dre.enable=1

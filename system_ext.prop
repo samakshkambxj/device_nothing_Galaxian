@@ -1,0 +1,23 @@
+# Audio
+ro.audio.silent=0
+ro.audio.flinger_standbytime_ms=1000
+ro.audio.usb.period_us=16000
+
+# Camera
+ro.camera.sound.forced=0
+
+# Display
+sys.brightness.disable_gamma_conversion=true
+
+# Radio
+persist.radio.nt.modem.svn=12
+persist.vendor.mtk.vilte.enable=1
+persist.vendor.mtk_rcs_single_reg_support=1
+persist.vendor.mtk_rtt_support=1
+persist.vendor.pco5.radio.ctrl=0
+
+# Media
+media.stagefright.thumbnail.prefer_hw_codecs=true
+
+# Wifi
+wifi.tethering.interface=ap0
