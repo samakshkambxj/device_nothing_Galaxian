@@ -130,6 +130,11 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.example \
     android.hardware.health-service.example_recovery
 
+$(call soong_config_set,lineage_health,charging_control_charging_path,/proc/charger/usb_charger_en)
+
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
 # HotwordEnrollement
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
