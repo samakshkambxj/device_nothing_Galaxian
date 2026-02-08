@@ -908,7 +908,6 @@ vendor/etc/init/android.hardware.security.keymint@3.0-service.trustonic.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service.trustonic.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.trustonic.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.trustonic.xml
-vendor/lib64/android.hardware.security.keymint-V3-ndk.so:vendor/lib64/android.hardware.security.keymint-V3-ndk-v34.so;FIX_SONAME
 
 # Media
 vendor/lib64/mt6878/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so

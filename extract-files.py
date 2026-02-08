@@ -42,8 +42,6 @@ blob_fixups: blob_fixups_user_type = {
         .apktool_patch('ims-patches'),
     'system_ext/lib64/libimsma.so': blob_fixup()
         .replace_needed('libsink.so', 'libsink-mtk.so'),
-    'vendor/bin/hw/android.hardware.security.keymint@3.0-service.trustonic': blob_fixup()
-        .replace_needed('android.hardware.security.keymint-V3-ndk.so', 'android.hardware.security.keymint-V3-ndk-v34.so'),
     'vendor/lib64/hw/mt6878/vendor.mediatek.hardware.pq_aidl-impl.so': blob_fixup()
         .add_needed('libui_shim.so'),
     ('vendor/lib64/mt6878/lib3a.ae.stat.so', 'vendor/lib64/libarmnn_ndk.mtk.vndk.so'): blob_fixup()
