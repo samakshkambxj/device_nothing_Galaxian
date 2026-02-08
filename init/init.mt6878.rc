@@ -1056,14 +1056,3 @@ on property:ro.boot.slot_suffix=_b
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset
     setprop persist.vendor.atm.mdmode normal
-
-# Logger
-service boot_log /system/bin/logcat -b all -D -f /metadata/boot_log.txt
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
-
-on boot
-    start boot_log
