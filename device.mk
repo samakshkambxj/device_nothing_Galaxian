@@ -158,6 +158,10 @@ PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Keylayout
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
+
 # Keystore
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore_V3.xml
