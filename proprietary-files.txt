@@ -1,5 +1,8 @@
 # All proprietary files from this list are from Galaga_B4.0-260108-1654
 
+# AEE
+vendor/lib64/libaedv.so
+
 # AAL
 vendor/lib64/mt6878/libaal_cust_func.so;SYMLINK=vendor/lib64/libaal_cust_func.so
 vendor/lib64/mt6878/libaalservice.so;SYMLINK=vendor/lib64/libaalservice.so

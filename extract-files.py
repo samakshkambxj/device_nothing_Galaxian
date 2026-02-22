@@ -20,7 +20,6 @@ from extract_utils.main import (
 namespace_imports = [
     'device/nothing/Galaga',
     'hardware/mediatek',
-    'hardware/mediatek/libaedv',
 ]
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
