@@ -1,89 +1,4 @@
-<?xml version="1.0"?>
-<compatibility-matrix version="5.0" type="framework">
-    <hal format="aidl" optional="true">
-        <name>android.hardware.radio.config</name>
-        <interface>
-            <name>IRadioConfig</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.radio.data</name>
-        <interface>
-            <name>IRadioData</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-            <instance>slot3</instance>
-            <instance>slot4</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.radio.messaging</name>
-        <interface>
-            <name>IRadioMessaging</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-            <instance>slot3</instance>
-            <instance>slot4</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.radio.modem</name>
-        <interface>
-            <name>IRadioModem</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-            <instance>slot3</instance>
-            <instance>slot4</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.radio.config</name>
-        <interface>
-            <name>IRadioConfig</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.radio.network</name>
-        <interface>
-            <name>IRadioNetwork</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.radio.sim</name>
-        <interface>
-            <name>IRadioSim</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.radio.voice</name>
-        <interface>
-            <name>IRadioVoice</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.mediatek.hardware.apuware.apusys</name>
-        <version>3</version>
-        <interface>
-            <name>INeuronApusys</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.mediatek.hardware.mtkradioex.dch</name>
-        <interface>
-            <name>IMtkRadioExDc</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
+<compatibility-matrix version="9.0" type="framework">
     <hal format="aidl" optional="true">
         <name>vendor.noth.hardware.sensor.sensor_extension</name>
         <interface>
@@ -92,19 +7,9 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
-        <name>android.hardware.radio.data</name>
+        <name>vendor.goodix.hardware.biometrics.fingerprint</name>
         <interface>
-            <name>IRadioData</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-            <instance>slot3</instance>
-            <instance>slot4</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-    <name>vendor.goodix.hardware.biometrics.fingerprint</name>
-        <interface>
-        <name>IGoodixFingerprintDaemon</name>
+            <name>IGoodixFingerprintDaemon</name>
             <instance>default</instance>
         </interface>
     </hal>
