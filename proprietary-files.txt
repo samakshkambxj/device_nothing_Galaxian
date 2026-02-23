@@ -50,6 +50,8 @@ vendor/lib64/libvow_ap_test_trip_nn.so
 vendor/lib64/libvow_comp_test.so
 vendor/lib64/vendor.mediatek.hardware.audio@8.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Audio (Configs)
 vendor/etc/audio_device.xml
