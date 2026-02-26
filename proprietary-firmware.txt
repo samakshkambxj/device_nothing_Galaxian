@@ -1,0 +1,22 @@
+# All proprietary files from this list are from Galaga_B4.0-260108-1654
+
+apusys.img;AB
+ccu.img;AB
+connsys_bt.img;AB
+connsys_gnss.img;AB
+connsys_wifi.img;AB
+dpm.img;AB
+gpueb.img;AB
+gz.img;AB
+lk.img;AB
+logo.img;AB
+mcf_ota.img;AB
+mcupm.img;AB
+modem.img;AB
+pi_img.img;AB
+preloader_raw.img;AB
+scp.img;AB
+spmfw.img;AB
+sspm.img;AB
+tee.img;AB
+vcp.img;AB
