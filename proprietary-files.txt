@@ -214,7 +214,6 @@ vendor/lib64/libconnfem.so
 
 # Camera
 vendor/bin/hw/mt6878/camerahalserver;SYMLINK=vendor/bin/hw/camerahalserver
-vendor/bin/mt6878/jpegtool;SYMLINK=vendor/bin/jpegtool
 vendor/etc/init/camerahalserver.rc
 vendor/etc/vintf/manifest/manifest_cameraprovider.xml
 vendor/etc/vintf/manifest/manifest_isphal.xml
@@ -1114,12 +1113,9 @@ vendor/lib64/vendor.mediatek.hardware.rcs-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.rcs@2.0.so
 
 # Radio (Configs)
-vendor/etc/apdb/APDB_MT6878___W2528
-vendor/etc/apdb/APDB_MT6878___W2528_ENUM
 vendor/etc/ecc_list.xml
 vendor/etc/ecc_list_preference.xml
 vendor/etc/mpe.conf
-vendor/etc/special_pws_channel.xml
 vendor/etc/vendor-apns-conf.xml
 vendor/etc/virtual-spn-conf-by-efgid1.xml
 vendor/etc/virtual-spn-conf-by-efpnn.xml
@@ -1146,7 +1142,6 @@ vendor/lib64/vendor.noth.hardware.sensor.sensor_extension-V1-ndk.so
 
 # Thermal
 vendor/bin/thermal_core
-vendor/bin/thermal_intf
 vendor/etc/init/init.thermal_core.rc
 vendor/etc/thermal/disable_skin_control.conf
 vendor/etc/thermal/disable_thermal.conf
