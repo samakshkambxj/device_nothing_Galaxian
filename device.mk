@@ -285,6 +285,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     hardware/google/pixel \
     hardware/mediatek/libmtkperf_client \
+    hardware/mediatek/wlan/wifi_hal \
     hardware/google/interfaces
 
 # Thermal
@@ -318,8 +319,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service-lazy \
     hostapd \
-    wpa_supplicant \
-    libwifi-hal-wrapper
+    wpa_supplicant
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
