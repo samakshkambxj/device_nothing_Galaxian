@@ -1,4 +1,4 @@
-<manifest version="7.0" type="device" target-level="7">
+<manifest version="7.0" type="device" target-level="8">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -15,23 +15,13 @@
         <fqname>@4.0::IMapper/default</fqname>
     </hal>
     <hal format="aidl">
-        <name>vendor.mediatek.hardware.composer_ext</name>
-        <fqname>IComposerExt/default</fqname>
-    </hal>
-    <hal format="aidl">
-        <name>vendor.mediatek.hardware.pq_aidl</name>
-        <fqname>IPictureQuality_AIDL/default</fqname>
-    </hal>
-    <hal format="aidl">
-        <name>vendor.mediatek.hardware.nvram</name>
-        <fqname>INvram/default</fqname>
-    </hal>
-    <hal format="aidl">
         <name>android.hardware.radio.config</name>
+        <version>2</version>
         <fqname>IRadioConfig/default</fqname>
     </hal>
     <hal format="aidl">
         <name>android.hardware.radio.data</name>
+        <version>2</version>
         <fqname>IRadioData/slot1</fqname>
         <fqname>IRadioData/slot2</fqname>
     </hal>
@@ -42,11 +32,13 @@
     </hal>
     <hal format="aidl">
         <name>android.hardware.radio.messaging</name>
+        <version>2</version>
         <fqname>IRadioMessaging/slot1</fqname>
         <fqname>IRadioMessaging/slot2</fqname>
     </hal>
     <hal format="aidl">
         <name>android.hardware.radio.modem</name>
+        <version>2</version>
         <fqname>IRadioModem/imsSlot1</fqname>
         <fqname>IRadioModem/imsSlot2</fqname>
         <fqname>IRadioModem/se1</fqname>
@@ -56,6 +48,7 @@
     </hal>
     <hal format="aidl">
         <name>android.hardware.radio.network</name>
+        <version>2</version>
         <fqname>IRadioNetwork/imsSlot1</fqname>
         <fqname>IRadioNetwork/imsSlot2</fqname>
         <fqname>IRadioNetwork/slot1</fqname>
@@ -68,6 +61,7 @@
     </hal>
     <hal format="aidl">
         <name>android.hardware.radio.sim</name>
+        <version>2</version>
         <fqname>IRadioSim/imsSlot1</fqname>
         <fqname>IRadioSim/imsSlot2</fqname>
         <fqname>IRadioSim/se1</fqname>
@@ -77,6 +71,7 @@
     </hal>
     <hal format="aidl">
         <name>android.hardware.radio.voice</name>
+        <version>2</version>
         <fqname>IRadioVoice/imsSlot1</fqname>
         <fqname>IRadioVoice/imsSlot2</fqname>
         <fqname>IRadioVoice/slot1</fqname>
@@ -91,7 +86,16 @@
         <fqname>IBGService/default</fqname>
     </hal>
     <hal format="aidl">
+        <name>vendor.mediatek.hardware.composer_ext</name>
+        <fqname>IComposerExt/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.mmagent</name>
+        <fqname>IMMAgent/default</fqname>
+    </hal>
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.mtkradioex.data</name>
+        <version>2</version>
         <fqname>IMtkRadioExData/slot1</fqname>
         <fqname>IMtkRadioExData/slot2</fqname>
     </hal>
@@ -112,6 +116,7 @@
     </hal>
     <hal format="aidl">
         <name>vendor.mediatek.hardware.mtkradioex.modem</name>
+        <version>2</version>
         <fqname>IMtkRadioExModem/slot1</fqname>
         <fqname>IMtkRadioExModem/slot2</fqname>
     </hal>
@@ -134,6 +139,19 @@
         <name>vendor.mediatek.hardware.mtkradioex.voice</name>
         <fqname>IMtkRadioExVoice/slot1</fqname>
         <fqname>IMtkRadioExVoice/slot2</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.nvram</name>
+        <fqname>INvram/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.pq_aidl</name>
+        <version>7</version>
+        <fqname>IPictureQuality_AIDL/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.videotelephony</name>
+        <fqname>IVideoTelephony/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.trustonic.tee</name>
