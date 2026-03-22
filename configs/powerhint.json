@@ -158,18 +158,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "GPUBlockBoost",
-      "Path": "/sys/kernel/ged/hal/gpu_boost_level",
-      "Values": [
-        "101",
-        "50",
-        "0",
-        "-1"
-      ],
-      "ResetOnInit": true,
-      "DefaultIndex": 2
-    },
-    {
       "Name": "MemFreq",
       "Path": "/sys/devices/platform/soc/1c00f000.dvfsrc/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq",
       "Values": [
@@ -187,7 +175,7 @@
       "Path": "/dev/cpuctl/foreground/cpu.uclamp.min",
       "Values": [
         "0",
-        "15",
+        "10",
         "30"
       ],
       "DefaultIndex": 0,
@@ -198,7 +186,6 @@
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
       "Values": [
         "0",
-        "30",
         "40",
         "100"
       ],
@@ -229,22 +216,28 @@
       "Value": "1700000"
     },
     {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "MemFreq",
+      "Duration": 1250,
+      "Value": "9999999999"
+    },
+    {
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 58,
-      "Value": "1300000"
+      "Value": "1100000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 58,
-      "Value": "1300000"
+      "Value": "1100000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "UclampFGMin",
       "Duration": 58,
-      "Value": "15"
+      "Value": "10"
     },
     {
       "PowerHint": "INTERACTION",
@@ -295,12 +288,6 @@
       "Value": "9999999999"
     },
     {
-      "PowerHint": "LAUNCH",
-      "Node": "GpuPwrLevel",
-      "Duration": 0,
-      "Value": "6"
-    },
-    {
       "PowerHint": "GAME",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
@@ -337,25 +324,7 @@
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "CPUBigClusterMinFreq",
-      "Duration": 0,
-      "Value": "9999999"
-    },
-    {
-      "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "CPULittleClusterMinFreq",
-      "Duration": 0,
-      "Value": "9999999"
-    },
-    {
-      "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "UclampFGMin",
-      "Duration": 0,
-      "Value": "30"
-    },
-    {
-      "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "UclampTAMin",
       "Duration": 0,
       "Value": "30"
     },
@@ -363,13 +332,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GpuPwrLevel",
       "Duration": 0,
-      "Value": "0"
-    },
-    {
-      "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "GPUBlockBoost",
-      "Duration": 0,
-      "Value": "50"
+      "Value": "6"
     }
   ]
 }
