@@ -163,6 +163,7 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
+    chipinfo \
     fstab.zram \
     fstab.mt6878 \
     fstab.mt6878.vendor_ramdisk \
