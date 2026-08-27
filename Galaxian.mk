@@ -28,3 +28,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceName=Galaxian \
     BuildDesc="sys_mssi_64_64only_ww_armv82-user 15 AP3A.240905.015.A2 2607021815 release-keys" \
     BuildFingerprint=Nothing/Galaxian/Galaxian:16/BP2A.250605.031.A3/2607021815:user/release-keys
+
+ASCP_MAINTAINER := Samakshhhh
