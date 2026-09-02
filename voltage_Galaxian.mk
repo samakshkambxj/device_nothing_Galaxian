@@ -12,11 +12,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/nothing/Galaxian/device.mk)
 
 # Inherit some common lineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
 
 TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := lineage_Galaxian
+PRODUCT_NAME := voltage_Galaxian
 PRODUCT_DEVICE := Galaxian
 PRODUCT_MANUFACTURER := Nothing
 PRODUCT_BRAND := Nothing

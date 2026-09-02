@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The VoltageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- VoltageOS maintainer -->
+    <string name="voltage_maintainer">Samakshhhhh</string>
+</resources>
