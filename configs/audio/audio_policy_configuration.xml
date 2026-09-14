@@ -218,6 +218,19 @@
                 </devicePort>
                 <devicePort tagName="USB Headset Out" type="AUDIO_DEVICE_OUT_USB_HEADSET" role="sink">
                 </devicePort>
+                <!-- Custom Bluetooth A2DP declaration for Dolby Spatial -->
+                <devicePort tagName="BT A2DP Out" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="44100 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </devicePort>
+                <devicePort tagName="BT A2DP Headphones" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="44100 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </devicePort>
+                <devicePort tagName="BT A2DP Speaker" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="44100 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </devicePort>
                 <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000 16000 32000 44100 48000"
@@ -313,6 +326,13 @@
                        sources="primary output,deep_buffer,fast,compress_offload,FM Tuner In,voip_rx,Voice Call In,hifi_playback,spatial output"/>
                 <route type="mix" sink="USB Headset Out"
                        sources="primary output,deep_buffer,fast,compress_offload,FM Tuner In,voip_rx,Voice Call In,hifi_playback,spatial output"/>
+                <!-- Custom Bluetooth Routes Declaration for Dolby Processing -->
+                <route type="mix" sink="BT A2DP Out"
+                       sources="primary output,deep_buffer,voip_rx,spatial output"/>
+                <route type="mix" sink="BT A2DP Headphones"
+                       sources="primary output,deep_buffer,voip_rx,spatial output"/>
+                <route type="mix" sink="BT A2DP Speaker"
+                       sources="primary output,deep_buffer,voip_rx,spatial output"/>
                 <route type="mix" sink="BT SCO"
                        sources="primary output,deep_buffer,fast,compress_offload,voip_rx,Voice Call In"/>
                 <route type="mix" sink="BT SCO Headset"
