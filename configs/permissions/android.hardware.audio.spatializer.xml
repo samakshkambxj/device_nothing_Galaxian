@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Spatializer feature declaration (local copy, frameworks/native lacks it on this branch) -->
+<permissions>
+    <feature name="android.hardware.audio.spatializer" />
+</permissions>
