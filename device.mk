@@ -263,13 +263,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # Radio
-PRODUCT_PACKAGES += \
-    mediatek-common \
-    telephony-common-stub
-
-PRODUCT_BOOT_JARS += \
-    mediatek-common \
-    telephony-common-stub
+$(call inherit-product, hardware/lineage/compat/frameworks/compat.mk)
+$(call inherit-product, hardware/mediatek/frameworks/mediatek-frameworks.mk)
 
 PRODUCT_PACKAGES += \
     mdota_symlink
