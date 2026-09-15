@@ -62,6 +62,9 @@ $(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_
 #Dolby
 $(call inherit-product, hardware/dolby/dolby.mk)
 
+# Enable spatializer framework (required for Spatializer.setEnabled() API)
+PRODUCT_SYSTEM_PROPERTIES += ro.audio.spatializer_enabled=true
+
 # LunarisDolby
 PRODUCT_PACKAGES += \
     LunarisDolby
