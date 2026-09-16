@@ -73,6 +73,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
+    $(LOCAL_PATH)/configs/permissions/android.hardware.audio.spatializer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.spatializer.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
 PRODUCT_COPY_FILES += \
