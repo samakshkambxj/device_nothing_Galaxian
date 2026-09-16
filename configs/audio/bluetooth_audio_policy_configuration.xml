@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bluetooth Audio HAL Audio Policy Configuration file -->
+<!-- Galaxian local copy based on frameworks/av bluetooth_audio_policy_configuration_7_0.xml,
+     with Dolby spatializer support added in the BT HAL module (MTK-safe).
+
+     NOTE: Do NOT declare BT A2DP devicePorts inside the primary HAL
+     (that breaks all BT audio on MTK - APM tries to open A2DP via
+     primary instead of the BT HAL). BT devices must stay here. -->
+<module name="bluetooth" halVersion="2.0">
+    <mixPorts>
+        <!-- A2DP Audio Ports -->
+        <mixPort name="a2dp output" role="source"/>
+        <!-- Hearing AIDs Audio Ports -->
+        <mixPort name="hearing aid output" role="source">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                     samplingRates="24000 16000"
+                     channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+        </mixPort>
+        <!--DOLBY SPATIALIZER-->
+        <mixPort name="spatial output" role="source" flags="AUDIO_OUTPUT_FLAG_SPATIALIZER">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                     samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+        </mixPort>
+        <!--DOLBY SPATIALIZER-->
+    </mixPorts>
+    <devicePorts>
+        <!-- A2DP Audio Ports -->
+        <devicePort tagName="BT A2DP Out" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP" role="sink">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                     samplingRates="44100 48000 88200 96000"
+                     channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+        </devicePort>
+        <devicePort tagName="BT A2DP Headphones" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES" role="sink">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                     samplingRates="44100 48000 88200 96000"
+                     channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+        </devicePort>
+        <devicePort tagName="BT A2DP Speaker" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER" role="sink">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                     samplingRates="44100 48000 88200 96000"
+                     channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+        </devicePort>
+        <!-- Hearing AIDs Audio Ports -->
+        <devicePort tagName="BT Hearing Aid Out" type="AUDIO_DEVICE_OUT_HEARING_AID" role="sink"/>
+    </devicePorts>
+    <routes>
+        <route type="mix" sink="BT A2DP Out"
+               sources="a2dp output,spatial output"/>
+        <route type="mix" sink="BT A2DP Headphones"
+               sources="a2dp output,spatial output"/>
+        <route type="mix" sink="BT A2DP Speaker"
+               sources="a2dp output,spatial output"/>
+        <route type="mix" sink="BT Hearing Aid Out"
+               sources="hearing aid output"/>
+    </routes>
+</module>
