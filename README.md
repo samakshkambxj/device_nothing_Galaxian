@@ -14,19 +14,20 @@ Shipped Android Version | 15 (Currently tree based on NOS 4.1 v1508)
 Storage | 128 / 256 GB
 Battery | 5000 mAh
 Display | 1084 x 2392 pixels, 6.77 inches, 60/120 hz
-Local manifest | https://github.com/Andreyka445/local_manifest
 
 ![Nothing Phone (3a) Lite](https://4pda.to/forum/dl/post/34278358/Nothing_%283a%29_Lite_%2804%29.jpg)
 
 Required repos💫:
 
-Vendor tree: https://github.com/Andreyka445/vendor_nothing_galaxian
+Vendor tree: https://github.com/samakshkambxj/vendor_nothing_galaxian
 
-kernel tree: https://github.com/Andreyka445/android_device_nothing_Galaxian-kernel
+kernel tree: https://github.com/samakshkambxj/android_device_nothing_Galaxian-kernel
 
-hw/mtk: https://github.com/Andreyka445/hardware_mediatek
+hw/mtk: https://github.com/samakshkambxj/hardware_mediatek
 
-sepolicy: https://github.com/Andreyka445/device_mediatek_sepolicy_vndr
+sepolicy: https://github.com/samakshkambxj/device_mediatek_sepolicy_vndr
+
+Dolby: https://github.com/samakshkambxj/hardware_dolby
 
 Happy Building🌜
 
