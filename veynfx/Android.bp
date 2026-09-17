@@ -36,7 +36,10 @@ filegroup {
         "effects/MultibandCompressor.cpp",
         "effects/Exciter.cpp",
         "effects/FirEqualizer.cpp",
-        "effects/SteamSpatial.cpp",
+        // SteamSpatial.cpp excluded: needs Valve's Steam Audio SDK
+        // (phonon.h + libsteamaudio), not vendored here. The no-op
+        // effects/SteamSpatial.h stub keeps the stage linking; see it
+        // for re-enable steps.
         "dsp/Biquad.cpp",
         "dsp/EnvelopeFollower.cpp",
         "dsp/WavLoader.cpp",
@@ -58,7 +61,6 @@ cc_library_shared {
 
     static_libs: [
         "libpffft",
-        "libsteamaudio",
     ],
 
     local_include_dirs: ["."],

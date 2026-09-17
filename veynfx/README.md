@@ -20,8 +20,10 @@ module (`libveynfxaidl`), effect name and log tags. Untouched on purpose:
 - `aidlaudioeffectservice_defaults`, `:effectCommonFile`
   (`hardware/interfaces/audio/aidl/default`)
 - `libpffft` (`external/pffft`)
-- `libsteamaudio` (vendor it if missing, or drop `effects/SteamSpatial.cpp`
-  and the `PARAM_SPATIAL_*` handlers to build without it)
+- Steam Audio is NOT required: `effects/SteamSpatial.h` is a no-op stub
+  (the phonon-based `SteamSpatial.cpp` stays on disk, excluded from the
+  build). To restore real HRTF, vendor `libsteamaudio` + SDK headers and
+  follow the re-enable steps in the stub header.
 
 ## Device integration (done in this tree)
 

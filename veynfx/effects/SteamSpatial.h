@@ -17,48 +17,40 @@
 #pragma once
 
 #include <cstdint>
-#include "phonon.h"
+
+// No-op stand-in for the Steam Audio-backed spatial stage.
+//
+// Valve's Steam Audio SDK (phonon.h + libsteamaudio) is not vendored in
+// this tree, so the real implementation (effects/SteamSpatial.cpp, kept
+// on disk but excluded from the build) cannot compile. This stub keeps
+// the class API and the PARAM_SPATIAL_* protocol intact: the app keeps
+// addressing the same params and the engine links unchanged — the
+// spatial block simply passes audio through.
+//
+// To re-enable real HRTF spatialization: restore the phonon-based
+// header and effects/SteamSpatial.cpp from git history, re-add the
+// .cpp to veynfx_engine_srcs and "libsteamaudio" to static_libs in
+// Android.bp, and vendor the SDK headers + prebuilt.
 
 namespace veynfx {
 
 class SteamSpatial {
 public:
-    SteamSpatial();
-    ~SteamSpatial();
+    SteamSpatial() = default;
+    ~SteamSpatial() = default;
 
-    void configure(int sampleRate);
-    void process(float* buffer, int frames);
-    void setEnabled(bool enabled);
+    void configure(int /*sampleRate*/) {}
+    void process(float* /*buffer*/, int /*frames*/) {}
+    void setEnabled(bool enabled) { mEnabled = enabled; }
     bool isEnabled() const { return mEnabled; }
-    void setWidth(int percent);
-    void setBlend(int percent);
-    void setDirection(float azimuth, float elevation);
-    void setHrtfProfile(int profile);
-    void reset();
+    void setWidth(int /*percent*/) {}
+    void setBlend(int /*percent*/) {}
+    void setDirection(float /*azimuth*/, float /*elevation*/) {}
+    void setHrtfProfile(int /*profile*/) {}
+    void reset() {}
 
 private:
-    void initSteamAudio();
-    void teardown();
-
-    bool mEnabled;
-    bool mInitialized;
-    bool mInitFailed = false;
-    int mSampleRate;
-    int mFrameSize;
-    int mWidth;
-    int mBlend;
-    float mAzimuth;
-    float mElevation;
-    int mHrtfProfile;
-
-    IPLContext mContext;
-    IPLHRTF mHrtf;
-    IPLBinauralEffect mBinauralL;
-
-    IPLAudioBuffer mInBuf;
-    IPLAudioBuffer mOutBufL;
-    bool mInBufAllocated;
-    bool mOutBufAllocated;
+    bool mEnabled = false;
 };
 
 }  // namespace veynfx
