@@ -36,6 +36,9 @@
         <!--DOLBY SPATIALIZER-->
         <library name="spatializer" path="libswspatializer.so"/>
         <!--DOLBY SPATIALIZER-->
+        <!--VEYNFX-->
+        <library name="veynfx" path="libveynfxaidl.so"/>
+        <!--VEYNFX END-->
     </libraries>
 
     <!-- list of effects to load.
@@ -95,6 +98,9 @@
         <!--DOLBY SPATIALIZER-->
         <effect name="spatializer" library="spatializer" uuid="ccd4cf09-a79d-46c2-9aae-06a1698d6c8f"/>
         <!--DOLBY SPATIALIZER-->
+        <!--VEYNFX-->
+        <effect name="veynfx" library="veynfx" uuid="f35cb927-a887-4f3d-847f-770634486d53"/>
+        <!--VEYNFX END-->
     </effects>
 
     <!-- Audio pre processor configurations.

@@ -66,6 +66,10 @@ $(call inherit-product, hardware/dolby/dolby.mk)
 PRODUCT_PACKAGES += \
     LunarisDolby
 
+# VeynFx DSP (AxionFx-native effect, see veynfx/README.md)
+PRODUCT_PACKAGES += \
+    libveynfxaidl
+
 # Fenrir
 $(call soong_config_set_bool,fastbootd,bypass_lock_state,true)
 
