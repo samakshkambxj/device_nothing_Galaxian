@@ -237,12 +237,20 @@ on post-fs-data
     chmod 0666 /proc/touchpanel/fts_gesture_point
     chown system system /proc/touchpanel/fts_edge_mode
     chmod 0666 /proc/touchpanel/fts_edge_mode
+    chown system system /proc/touchpanel/edge_mode
+    chmod 0666 /proc/touchpanel/edge_mode
     chown system system /proc/touchpanel/TP_charger_flags
     chmod 0666 /proc/touchpanel/TP_charger_flags
+    chown system system /proc/touchpanel/pocket_mode
+    chmod 0666 /proc/touchpanel/pocket_mode
     chown system system /proc/touchpanel/fts_pocket_mode
     chmod 0666 /proc/touchpanel/fts_pocket_mode
+    chown system system /proc/touchpanel/game_mode
+    chmod 0666 /proc/touchpanel/game_mode
     chown system system /proc/touchpanel/fts_game_mode
     chmod 0666 /proc/touchpanel/fts_game_mode
+    chown system system /proc/touchpanel/palm_to_sleep_support
+    chmod 0666 /proc/touchpanel/palm_to_sleep_support
 #endif /* NT_EDIT */
 
 # -----------------------
@@ -1066,3 +1074,8 @@ on property:vendor.mtk.md1.status=reset
 # Dt2w - follow NothingOS behavior, avoid whole extension just for fts gesture node
 on property:vendor.touch.double_tap_to_wake=*
     write /proc/touchpanel/gesture_mode ${vendor.touch.double_tap_to_wake}
+
+# Pocket mode - driven by NothingDoze PocketSensor via sys.touch.pocket_mode
+on property:sys.touch.pocket_mode=*
+    write /proc/touchpanel/pocket_mode ${sys.touch.pocket_mode}
+    write /proc/touchpanel/fts_pocket_mode ${sys.touch.pocket_mode}
