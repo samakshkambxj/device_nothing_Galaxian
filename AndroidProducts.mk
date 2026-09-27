@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_Galaxian.mk
+    $(LOCAL_DIR)/Galaxian.mk
