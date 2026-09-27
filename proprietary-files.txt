@@ -1257,13 +1257,3 @@ vendor/firmware/txpowerctrl.cfg
 vendor/firmware/wifi.cfg
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
 
-# NFC
-vendor/bin/hw/android.hardware.nfc-service-tms:vendor/bin/hw/android.hardware.nfc-service-tms
-vendor/etc/libnfc-nci.conf:vendor/etc/libnfc-nci.conf
-vendor/etc/libnfc-tms.conf:vendor/etc/libnfc-tms.conf
-vendor/etc/libnfc-tms_RF.conf:vendor/etc/libnfc-tms_RF.conf
-vendor/etc/libnfc-tms_RF_EC2.conf:vendor/etc/libnfc-tms_RF_EC2.conf
-vendor/etc/libnfc-tms_RF_GB1.conf:vendor/etc/libnfc-tms_RF_GB1.conf
-vendor/etc/init/nfc-service-tms.rc:vendor/etc/init/nfc-service-tms.rc
-vendor/etc/libese-tms.conf:vendor/etc/libese-tms.conf
-vendor/etc/THN31_FW_VTP.txt:vendor/etc/THN31_FW_VTP.txt
