@@ -207,12 +207,17 @@ vendor/lib64/libconnfem.so
 
 # Camera
 vendor/bin/hw/mt6878/camerahalserver;SYMLINK=vendor/bin/hw/camerahalserver
+vendor/bin/hw/vendor.noth.hardware.camera-service
 vendor/etc/init/camerahalserver.rc
+vendor/etc/init/vendor.noth.hardware.camera-service.rc
 vendor/etc/vintf/manifest/manifest_cameraprovider.xml
 vendor/etc/vintf/manifest/manifest_isphal.xml
+vendor/etc/vintf/manifest/vendor.noth.hardware.camera-service.xml
 vendor/lib64/hw/vendor.mediatek.hardware.camera.atms_aidl@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice_aidl@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so
+vendor/lib64/vendor.noth.hardware.camera-V1-ndk.so
+vendor/lib64/vendor.noth.hardware.camera-service-impl.so
 vendor/lib64/mt6878/gc02m1_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc02m1_mipi_raw_IdxMgr.so
 vendor/lib64/mt6878/gc02m1_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc02m1_mipi_raw_tuning.so
 vendor/lib64/mt6878/gc08a8_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc08a8_mipi_raw_IdxMgr.so
