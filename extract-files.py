@@ -125,6 +125,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libsilkybrightnesscore.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    'vendor/etc/init/vendor.noth.hardware.camera-service.rc': blob_fixup()
+        .regex_replace(' *task_profiles NtCamAlgoCapacity\n', ''),
     'vendor/bin/mnld': blob_fixup()
         .replace_needed('libmnl.so', 'libmnl-v33.so'),
     ('vendor/lib64/libcodec2_mtk_vdec.so', 'vendor/lib64/libcodec2_mtk_venc.so'): blob_fixup()
