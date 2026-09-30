@@ -902,6 +902,11 @@ system_ext/priv-app/ImsService/ImsService.apk
 system_ext/priv-app/MtkGbaService/MtkGbaService.apk
 system_ext/priv-app/MtkTelephonyAssist/MtkTelephonyAssist.apk
 
+# Nothing apps
+system_ext/priv-app/NTGallery/NTGallery.apk
+system_ext/priv-app/NTCamera/NTCamera.apk
+system_ext/etc/permissions/privapp-permissions-NTCamera.xml
+
 # HotwordEnrollment
 product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk
 product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk
