@@ -218,6 +218,15 @@ vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice_aidl@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so
 vendor/lib64/vendor.noth.hardware.camera-V1-ndk.so
 vendor/lib64/vendor.noth.hardware.camera-service-impl.so
+vendor/lib64/libntcamallocator.so
+vendor/lib64/libntcamcommonutils.so
+vendor/lib64/libntcamcore.so
+vendor/lib64/libntcamextened.so
+vendor/lib64/libntcammetadata.so
+vendor/lib64/libntcampipepb.so
+vendor/lib64/libntcamselector.so
+vendor/lib64/libntcamthread.so
+vendor/lib64/libntcamera2ndk_vendor_v2.so
 vendor/lib64/mt6878/gc02m1_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc02m1_mipi_raw_IdxMgr.so
 vendor/lib64/mt6878/gc02m1_mipi_raw_tuning.so;SYMLINK=vendor/lib64/gc02m1_mipi_raw_tuning.so
 vendor/lib64/mt6878/gc08a8_mipi_raw_IdxMgr.so;SYMLINK=vendor/lib64/gc08a8_mipi_raw_IdxMgr.so
