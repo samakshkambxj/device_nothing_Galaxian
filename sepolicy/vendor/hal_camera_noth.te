@@ -4,7 +4,6 @@ allow hal_camera_default fwk_camera_service:service_manager find;
 allow hal_camera_default cameraserver_service:service_manager find;
 binder_call(hal_camera_default, cameraserver)
 
-# Camera config / vendor props and Nothing feature node it reads at init.
-allow hal_camera_default camera_config_prop:file r_file_perms;
+# Camera config props are system-only; the HAL runs without them (defaults).
 get_prop(hal_camera_default, vendor_camera_prop)
 allow hal_camera_default vendor_ntf_file:file r_file_perms;
