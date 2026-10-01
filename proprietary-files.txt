@@ -667,6 +667,13 @@ vendor/etc/camera/ldc_cap_model
 vendor/etc/camera/ldc_cap_policy
 vendor/etc/camera/morpho_raw_deep_denoise_model.bin
 vendor/etc/camera/morpho_raw_deep_denoise_tuning_params.xml
+vendor/etc/camera/AI_Seg_v0.2.29.1_nothing.bin
+vendor/etc/camera/CFR_para4_Nothing_23111_UW_v8200-4.bin
+vendor/etc/camera/CFR_para4_Nothing_23111_W_v8210-1.bin
+vendor/etc/camera/CFR_para4_Nothing_23114_W_v8220.bin
+vendor/etc/camera/nothing_node.bin
+vendor/etc/camera/nothing_noise_stat.bin
+vendor/etc/camera/nothing_pipeline.bin
 vendor/etc/camera/param.bin
 vendor/etc/camera/vidhance.lic
 vendor/etc/camera/vidhance_calibration
