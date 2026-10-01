@@ -8,8 +8,8 @@ binder_call(hal_camera_default, cameraserver)
 # (AOSP neverallows appdomain -> hal_camera_service find).
 type vendor_hal_noth_camera_service, service_manager_type;
 allow hal_camera_default vendor_hal_noth_camera_service:service_manager { add find };
-allow platform_app vendor_hal_noth_camera_service:service_manager find;
-binder_call(platform_app, hal_camera_default)
+allow appdomain vendor_hal_noth_camera_service:service_manager find;
+binder_call(appdomain, hal_camera_default)
 
 # Camera config props are system-only; the HAL runs without them (defaults).
 get_prop(hal_camera_default, vendor_camera_prop)
