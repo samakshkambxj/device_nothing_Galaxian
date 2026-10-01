@@ -7,3 +7,10 @@ binder_call(hal_camera_default, cameraserver)
 # Camera config props are system-only; the HAL runs without them (defaults).
 get_prop(hal_camera_default, vendor_camera_prop)
 allow hal_camera_default vendor_ntf_file:file r_file_perms;
+
+# HAL allocates gralloc buffers for its algo pipeline.
+hal_client_domain(hal_camera_default, hal_graphics_allocator)
+
+# NTCamera (platform priv-app) talks to the Nothing camera HAL directly.
+allow platform_app hal_camera_service:service_manager find;
+binder_call(platform_app, hal_camera_default)
