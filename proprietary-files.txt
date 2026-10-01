@@ -219,6 +219,7 @@ vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so
 vendor/lib64/vendor.noth.hardware.camera-V1-ndk.so
 vendor/lib64/vendor.noth.hardware.camera-service-impl.so
 vendor/lib64/libntcamallocator.so
+vendor/lib64/libanc_scene.so
 vendor/lib64/libntcamcommonutils.so
 vendor/lib64/libntcamcore.so
 vendor/lib64/libntcamextened.so
