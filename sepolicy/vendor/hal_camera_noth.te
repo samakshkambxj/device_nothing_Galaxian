@@ -4,6 +4,13 @@ allow hal_camera_default fwk_camera_service:service_manager find;
 allow hal_camera_default cameraserver_service:service_manager find;
 binder_call(hal_camera_default, cameraserver)
 
+# Stock labels INtCamService with a custom type so apps may find it
+# (AOSP neverallows appdomain -> hal_camera_service find).
+type vendor_hal_noth_camera_service, service_manager_type;
+allow hal_camera_default vendor_hal_noth_camera_service:service_manager { add find };
+allow platform_app vendor_hal_noth_camera_service:service_manager find;
+binder_call(platform_app, hal_camera_default)
+
 # Camera config props are system-only; the HAL runs without them (defaults).
 get_prop(hal_camera_default, vendor_camera_prop)
 allow hal_camera_default vendor_ntf_file:file r_file_perms;
