@@ -170,6 +170,12 @@ include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
 # Verified boot
 BOARD_AVB_ENABLE := true
+ifneq ($(TARGET_AVB_DISABLE_DM_VERITY), false)
+# Disable dm-verity (HASHTREE_DISABLED) to keep partitions flashable (e.g. GApps),
+# while keeping signature verification so RKP/attestation stays alive.
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 1
+endif
+
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 
 BOARD_AVB_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
