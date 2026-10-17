@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import os
+import shutil
+
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -30,6 +33,17 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     'vendor.mediatek.hardware.videotelephony-v1-ndk': lib_fixup_vendor_suffix,
 }
+
+def nt_gallery_prebuilt_impl(ctx, file, file_path, *args, **kwargs):
+    # The stock NTGallery is replaced wholesale by a merged build of Nothing's
+    # newer, split-APK release. The APK is pinned in proprietary-files.txt via
+    # its source hash and its post-fixup hash, so re-running extraction either
+    # keeps this exact file or regenerates it and verifies both hashes.
+    prebuilt = os.path.join(
+        ctx.module_dir, 'blob-patches/ntgallery/NTGallery.apk'
+    )
+    shutil.copy(prebuilt, file_path)
+
 
 blob_fixups: blob_fixups_user_type = {
     (
@@ -137,6 +151,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libnativewindow.so'),
     'system_ext/priv-app/NTCamera/NTCamera.apk': blob_fixup()
         .apktool_patch('blob-patches/ntcam-patches'),
+    'system_ext/priv-app/NTGallery/NTGallery.apk': blob_fixup()
+        .call(nt_gallery_prebuilt_impl),
     'system_ext/lib64/libofflineproc_jni_aidl.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_describe')
         .clear_symbol_version('AHardwareBuffer_lock')
