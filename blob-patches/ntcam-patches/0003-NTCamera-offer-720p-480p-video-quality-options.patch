@@ -1,16 +1,21 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Samaksh Kamboj <samakshk4@gmail.com>
 Date: Wed, 14 Oct 2026 03:00:00 +0000
-Subject: [PATCH 3/3] NTCamera: offer 720p/480p video quality options
+Subject: [PATCH 3/5] NTCamera: offer 720p/480p video quality options
 
 The HAL exposes 720p/480p recording sizes (Aperture uses them) and the
 filter logic already emits quality IDs 5/4 when supported; only the
 settings arrays lack the entries. Recording fps still comes from the
 separate 30/60 fps preference.
 
+The same preference points camera:icons at @array/video_quality_icons,
+which IconListPreference.filterUnsupported() indexes in parallel with
+entryValues; leaving it at two items makes the app throw
+ArrayIndexOutOfBoundsException (length=2; index=2) as soon as a third
+quality is supported. Extend it too (the app already reuses
+ic_video_quality_high in video_timelapse_icons).
+
 ---
-diff --git a/res/values/arrays.xml b/res/values/arrays.xml
-index 0000000..0000000 100644
 --- a/res/values/arrays.xml
 +++ b/res/values/arrays.xml
 @@ -3019,10 +3019,14 @@
@@ -28,5 +33,14 @@ index 0000000..0000000 100644
      </string-array>
      <string-array name="pref_video_record_red_light_entries">
          <item>@string/pref_video_record_red_light_entry_off</item>
---
+@@ -3308,6 +3312,8 @@
+     <array name="video_quality_icons">
+         <item>@drawable/ic_video_quality_fine</item>
+         <item>@drawable/ic_video_quality_4k</item>
++        <item>@drawable/ic_video_quality_high</item>
++        <item>@drawable/ic_video_quality_high</item>
+     </array>
+     <array name="video_stabilization_icons">
+         <item>@drawable/ic_video_stabilization_off</item>
+-- 
 2.55.0
