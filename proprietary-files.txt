@@ -1581,7 +1581,7 @@ vendor/lib64/libneuron_platform.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 system/lib64/libnelib.so
 system_ext/etc/permissions/privapp-permissions-NothingExperience.xml
-system_ext/priv-app/NTGallery/NTGallery.apk
+system_ext/priv-app/NTGallery/NTGallery.apk|b9e2ed081fb0c4102b4d3671cda2410893c05c46|d3fb6805a266546e6ccca7fba2c43b7505d59e78
 system_ext/priv-app/NothingExperience/NothingExperience.apk
 vendor/lib64/libvpu.so
 vendor/lib64/libvpu5.so
