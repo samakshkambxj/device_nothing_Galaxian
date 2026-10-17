@@ -1,0 +1,36 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Samaksh Kamboj <samakshk4@gmail.com>
+Date: Sat, 17 Oct 2026 05:00:00 +0000
+Subject: [PATCH 6/6] NTCamera: offer 4K60 on Galaxian
+
+ConfigMapGalaxian (chosen from ro.product.device=Galaxian) seeds
+FeatureConfigParser.sConfigMap with
+
+    FEATURE_CAMERA_4K_60FPS_SUPPORT -> v3   # the shared "false" scratch
+    FEATURE_CAMERA_SUPER_NIGHT      -> v2   # the shared "true" scratch
+
+so the app never offers 4K60 even though the pipeline accepts 60fps.
+Point that single put at v2, the register already holding "true".
+
+This mirrors what the Tetris port (NtCam_Port v1.23) does to
+ConfigMapGalaxian in its dex patch, where it appends a second put of the
+same key with "true" after the stock one instead of editing the shared
+register.
+
+Whether the vendor pipeline really accepts 4K + 60fps for a given
+camera/mode is still up to the HAL; the app only exposes the choice.
+
+---
+--- a/smali_classes5/com/nothing/common/utils/config/ConfigMapGalaxian.smali
++++ b/smali_classes5/com/nothing/common/utils/config/ConfigMapGalaxian.smali
+@@ -407,7 +407,7 @@
+ 
+     const-string v1, "FEATURE_CAMERA_4K_60FPS_SUPPORT"
+ 
+-    invoke-virtual {v0, v1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
++    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+ 
+     .line 66
+     sget-object v0, Lcom/nothing/common/utils/FeatureConfigParser;->sConfigMap:Ljava/util/HashMap;
+-- 
+2.55.0
