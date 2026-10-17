@@ -1005,6 +1005,9 @@ vendor/etc/init/init.ntf.rc
 vendor/lib64/libntf.so
 
 # NTFeature
+system_ext/etc/permissions/gallery-google-lens-permissions.xml
+system_ext/etc/permissions/google-lens-permissions.xml
+system_ext/etc/permissions/com.nothing.feature.xml
 
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram-service
@@ -1354,6 +1357,7 @@ system_ext/lib64/libmtkisp_metadata_sys.so
 system_ext/lib64/libofflineproc_jni_aidl.so
 system_ext/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so;MODULE_SUFFIX=_system_ext
 system/etc/sysconfig/nothing-hiddenapi-package-allowlist.xml
+system/etc/morpho_image_refiner_tuning_params.xml
 system_ext/etc/permissions/advancedSample_camera_extensions.xml
 system_ext/etc/permissions/privapp-permissions-NTCamera.xml
 system_ext/framework/androidx.camera.extensions.impl.advanced.jar
