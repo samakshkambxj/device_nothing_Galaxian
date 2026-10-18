@@ -51,6 +51,45 @@ ro.vendor.mtk_mvpu_support=0
 ro.vendor.mtk_slow_motion_support=1
 vendor.mtk.camera.app.fd.video=1
 
+# Camera - Nothing Camera feature overrides
+#
+# ntcam.cfg.<KEY> is read back by NTCamera through the FeatureConfig hook
+# (blob-patches/ntcam-patches/0006) and overrides whatever value the app
+# resolves from its bundled feature config; the com.nothing.camera.* keys
+# below are read by the app itself. Same lever set the NtCam Port uses.
+#
+# Night mode exposure tuning + Super Night
+com.nothing.camera.front.supernight.ev.minus=-3
+com.nothing.camera.front.supernight.ev.minusplus=-6
+com.nothing.camera.dualbokeh.ev.minus=-2
+com.nothing.camera.dualbokeh.ev.minusplus=-4
+com.nothing.camera.singlebokeh.ev.minus=-2
+com.nothing.camera.singlebokeh.ev.minusplus=-4
+com.nothing.camera.supernight.ev.minus=-3
+com.nothing.camera.supernight.ev.minusplus=-6
+ntcam.cfg.FEATURE_CAMERA_SUPER_NIGHT_LITE=true
+ntcam.cfg.FEATURE_MEDIA_CAMERA_NIGHTSHOT_SUPPORTED=true
+ntcam.cfg.FEATURE_SUPER_NIGHT_LITE_SHOW_ANIM=true
+# 20x digital zoom. The app side is already 20x, the HAL limit is lifted in
+# extract-files.py (ntcam_max_digital_zoom).
+ntcam.cfg.FEATURE_CAMERA_MAX_ZOOM=20
+# Rear camera beauty + touch shutter
+ntcam.cfg.FEATURE_MEDIA_CAMERA_BEAUTYSHOT_SUPPORTED=true
+ntcam.cfg.FEATURE_MEDIA_TOUCH_SHUTTER_SUPPORTED=true
+ntcam.cfg.REAR_BEAUTY=true
+# AI moon. Galaxian's vendor already carries the moon tag, the Supermoon node
+# and the ANC model, and the app's own moon tuning mode (47) and zoom
+# threshold (12) are left as they are.
+ntcam.cfg.FEATURE_AIMOON_SUPPORT=true
+ntcam.cfg.FEATURE_CAMERA_AI_MOON=2
+#
+# Still unverified, kept off until they are: 3x portrait zoom and 2x front
+# portrait bokeh. The candidate levers are
+#   ntcam.cfg.FEATURE_CAMERA_BOKEH_MAX_ZOOM=3
+#   ntcam.cfg.FEATURE_BOKEH_DEFAULT_ZOOM=3
+#   ntcam.cfg.FEATURE_CAMERA_BOKEH_2X=true
+#   ntcam.cfg.FEATURE_CAMERAE_BOKEH_2X=true
+
 # Connectivity
 persist.vendor.connsys.chipid=-1
 persist.vendor.connsys.dynamic.dump=0
