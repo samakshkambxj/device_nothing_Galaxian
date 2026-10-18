@@ -45,6 +45,28 @@ def nt_gallery_prebuilt_impl(ctx, file, file_path, *args, **kwargs):
     shutil.copy(prebuilt, file_path)
 
 
+def ntcam_max_digital_zoom(ctx, file, file_path, *args, **kwargs):
+    # Nothing's camera app already goes up to 20x (FEATURE_CAMERA_MAX_ZOOM
+    # defaults to 20 on Galaxian), but libmtkcam_metastore.so advertises 10.0f
+    # as availableMaxDigitalZoom, so the HAL clamps the range the app offers.
+    # Rewrite the one MOVZ immediate that materialises that constant:
+    #   movz w8, #0x4120, lsl #16   (10.0f)  ->  #0x41a0  (20.0f)
+    # The byte pattern occurs exactly once in the blob; a mismatch means the
+    # vendor library changed and the constant has to be located again.
+    stock = b'\x08\x24\xa8\x52'
+    patched = b'\x08\x34\xa8\x52'
+
+    with open(file_path, 'rb+') as f:
+        data = f.read()
+        if data.count(stock) != 1:
+            raise Exception(
+                f'{file}: expected exactly one 10.0f max-digital-zoom constant, '
+                f'found {data.count(stock)}'
+            )
+        f.seek(0)
+        f.write(data.replace(stock, patched))
+
+
 blob_fixups: blob_fixups_user_type = {
     (
         'system_ext/etc/init/init.vtservice.rc',
@@ -74,6 +96,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libmtkcam_cputrack.so'
     ): blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
+    'vendor/lib64/mt6878/libmtkcam_metastore.so': blob_fixup()
+        .call(ntcam_max_digital_zoom),
     'vendor/lib64/hw/audio.primary.mediatek.so': blob_fixup()
         .replace_needed('libalsautils.so', 'libalsautils-stock.so')
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so')
