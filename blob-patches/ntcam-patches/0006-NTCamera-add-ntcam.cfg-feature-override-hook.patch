@@ -1,0 +1,208 @@
+From 9962f9bdd1108b086c4bd26b1b796609b8feface Mon Sep 17 00:00:00 2001
+From: Samaksh Kamboj <samakshk4@gmail.com>
+Date: Sun, 18 Oct 2026 08:30:55 +0530
+Subject: [PATCH] NTCamera: add ntcam.cfg.* feature override hook
+
+FeatureConfig is the app-side config resolver. Wrap it so a system
+property named ntcam.cfg.<KEY> overrides whatever value the built-in
+feature config XML resolves to, and add a rear-beauty gate helper.
+
+ntcamOverride()  -> SystemProperties.get("ntcam.cfg." + key)
+ntcamBeautyCam() -> rear beauty (FEATURE: REAR_BEAUTY)
+
+getFinalConfig/getFinalConfigString* consult the property first, so
+each flag can be forced on/off from a ROM prop without touching the
+APK's bundled config.
+
+Mechanism reproduced from the NtCam Port v1.23 module for CMF Phone 1
+(Tetris) by @UCYTOFFICIAL and @CyberZaki.
+---
+ .../nothing/common/utils/FeatureConfig.smali  | 121 +++++++++++++++++-
+ 1 file changed, 116 insertions(+), 5 deletions(-)
+
+diff --git a/smali_classes5/com/nothing/common/utils/FeatureConfig.smali b/smali_classes5/com/nothing/common/utils/FeatureConfig.smali
+index f5a539e..f436950 100644
+--- a/smali_classes5/com/nothing/common/utils/FeatureConfig.smali
++++ b/smali_classes5/com/nothing/common/utils/FeatureConfig.smali
+@@ -1133,9 +1133,24 @@
+ .end method
+ 
+ .method public static getFinalConfig(Ljava/lang/String;Z)Z
+-    .locals 1
++    .locals 2
++
++    invoke-static {p0}, Lcom/nothing/common/utils/FeatureConfig;->ntcamOverride(Ljava/lang/String;)Ljava/lang/String;
++
++    move-result-object v0
++
++    if-eqz v0, :cond_0
++
++    const-string v1, "true"
++
++    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    move-result v0
++
++    return v0
+ 
+     .line 681
++    :cond_0
+     invoke-static {}, Lcom/nothing/common/utils/FeatureConfig;->init()V
+ 
+     .line 682
+@@ -1151,7 +1166,16 @@
+ .method public static getFinalConfigString(Ljava/lang/String;)Ljava/lang/String;
+     .locals 1
+ 
++    invoke-static {p0}, Lcom/nothing/common/utils/FeatureConfig;->ntcamOverride(Ljava/lang/String;)Ljava/lang/String;
++
++    move-result-object v0
++
++    if-eqz v0, :cond_0
++
++    return-object v0
++
+     .line 686
++    :cond_0
+     invoke-static {}, Lcom/nothing/common/utils/FeatureConfig;->init()V
+ 
+     .line 687
+@@ -1167,7 +1191,16 @@
+ .method public static getFinalConfigString(Ljava/lang/String;I)Ljava/lang/String;
+     .locals 1
+ 
++    invoke-static {p0}, Lcom/nothing/common/utils/FeatureConfig;->ntcamOverride(Ljava/lang/String;)Ljava/lang/String;
++
++    move-result-object v0
++
++    if-eqz v0, :cond_0
++
++    return-object v0
++
+     .line 697
++    :cond_0
+     invoke-static {}, Lcom/nothing/common/utils/FeatureConfig;->init()V
+ 
+     .line 698
+@@ -1177,12 +1210,12 @@
+ 
+     move-result-object p0
+ 
+-    if-eqz p0, :cond_0
++    if-eqz p0, :cond_1
+ 
+     return-object p0
+ 
+     .line 699
+-    :cond_0
++    :cond_1
+     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+ 
+     move-result-object p0
+@@ -1193,7 +1226,16 @@
+ .method public static getFinalConfigString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+     .locals 1
+ 
++    invoke-static {p0}, Lcom/nothing/common/utils/FeatureConfig;->ntcamOverride(Ljava/lang/String;)Ljava/lang/String;
++
++    move-result-object v0
++
++    if-eqz v0, :cond_0
++
++    return-object v0
++
+     .line 691
++    :cond_0
+     invoke-static {}, Lcom/nothing/common/utils/FeatureConfig;->init()V
+ 
+     .line 692
+@@ -1203,11 +1245,11 @@
+ 
+     move-result-object p0
+ 
+-    if-eqz p0, :cond_0
++    if-eqz p0, :cond_1
+ 
+     return-object p0
+ 
+-    :cond_0
++    :cond_1
+     return-object p1
+ .end method
+ 
+@@ -1383,3 +1425,72 @@
+ 
+     return v0
+ .end method
++
++.method public static ntcamBeautyCam(Z)Z
++    .locals 2
++
++    if-nez p0, :cond_0
++
++    const-string v0, "ntcam.cfg.REAR_BEAUTY"
++
++    const/4 v1, 0x0
++
++    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
++
++    move-result v0
++
++    return v0
++
++    :cond_0
++    const/4 v0, 0x1
++
++    return v0
++.end method
++
++.method public static ntcamOverride(Ljava/lang/String;)Ljava/lang/String;
++    .locals 3
++
++    if-nez p0, :cond_0
++
++    const/4 v0, 0x0
++
++    return-object v0
++
++    :cond_0
++    const-string v0, "ntcam.cfg."
++
++    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
++
++    move-result-object v0
++
++    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
++
++    move-result v1
++
++    if-eqz v1, :cond_1
++
++    const/4 v0, 0x0
++
++    return-object v0
++
++    :cond_1
++    const-string v1, "NtCamCfg"
++
++    const-string v2, "="
++
++    invoke-virtual {p0, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
++
++    move-result-object v2
++
++    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
++
++    move-result-object v2
++
++    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
++
++    return-object v0
++.end method
+-- 
+2.56.0
+
