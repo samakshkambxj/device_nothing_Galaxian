@@ -1,0 +1,78 @@
+From 77aa25a93cc40c7f81ccab22de2c2c40b56e563f Mon Sep 17 00:00:00 2001
+From: Samaksh Kamboj <samakshk4@gmail.com>
+Date: Sun, 18 Oct 2026 08:30:56 +0530
+Subject: [PATCH] NTCamera: allow beauty level and beauty button on the rear
+ camera
+
+Beauty level / beauty-shot init / beauty button visibility are gated on
+isFrontCam() only. Route those four decisions through
+FeatureConfig.ntcamBeautyCam() so the rear camera can use beauty when
+ntcam.cfg.REAR_BEAUTY=true is set.
+
+Mechanism reproduced from the NtCam Port v1.23 module for CMF Phone 1
+(Tetris) by @UCYTOFFICIAL and @CyberZaki.
+---
+ .../nothing/camera/mode/NcfPhotoMode$PreviewHandler.smali | 4 ++++
+ smali_classes4/com/nothing/camera/mode/NcfPhotoMode.smali | 4 ++++
+ .../com/nothing/camera/ui/modeui/PhotoUINode.smali        | 8 ++++++++
+ 3 files changed, 16 insertions(+)
+
+diff --git a/smali_classes4/com/nothing/camera/mode/NcfPhotoMode$PreviewHandler.smali b/smali_classes4/com/nothing/camera/mode/NcfPhotoMode$PreviewHandler.smali
+index 00a1a15..cda8569 100644
+--- a/smali_classes4/com/nothing/camera/mode/NcfPhotoMode$PreviewHandler.smali
++++ b/smali_classes4/com/nothing/camera/mode/NcfPhotoMode$PreviewHandler.smali
+@@ -949,6 +949,10 @@
+     invoke-static {}, Lcom/nothing/algolib/rawhdr/RawJGEvUtil;->init()V
+ 
+     :cond_1e
++    invoke-static {v1}, Lcom/nothing/common/utils/FeatureConfig;->ntcamBeautyCam(Z)Z
++
++    move-result v1
++
+     if-eqz v1, :cond_1f
+ 
+     .line 4606
+diff --git a/smali_classes4/com/nothing/camera/mode/NcfPhotoMode.smali b/smali_classes4/com/nothing/camera/mode/NcfPhotoMode.smali
+index 54e3626..0623ec6 100644
+--- a/smali_classes4/com/nothing/camera/mode/NcfPhotoMode.smali
++++ b/smali_classes4/com/nothing/camera/mode/NcfPhotoMode.smali
+@@ -5874,6 +5874,10 @@
+ 
+     move-result v5
+ 
++    invoke-static {v5}, Lcom/nothing/common/utils/FeatureConfig;->ntcamBeautyCam(Z)Z
++
++    move-result v5
++
+     if-eqz v5, :cond_2b
+ 
+     iget v5, v1, Lcom/nothing/camera/mode/NcfPhotoMode;->mBeautyLevel:I
+diff --git a/smali_classes4/com/nothing/camera/ui/modeui/PhotoUINode.smali b/smali_classes4/com/nothing/camera/ui/modeui/PhotoUINode.smali
+index b2c1bd6..058ab65 100644
+--- a/smali_classes4/com/nothing/camera/ui/modeui/PhotoUINode.smali
++++ b/smali_classes4/com/nothing/camera/ui/modeui/PhotoUINode.smali
+@@ -179,6 +179,10 @@
+ 
+     move-result v0
+ 
++    invoke-static {v0}, Lcom/nothing/common/utils/FeatureConfig;->ntcamBeautyCam(Z)Z
++
++    move-result v0
++
+     if-eqz v0, :cond_3
+ 
+     iget-object v0, p0, Lcom/nothing/camera/ui/modeui/PhotoUINode;->mCameraUI:Lcom/nothing/camera/ui/uicontext/CameraUIContext;
+@@ -1002,6 +1006,10 @@
+ 
+     move-result p1
+ 
++    invoke-static {p1}, Lcom/nothing/common/utils/FeatureConfig;->ntcamBeautyCam(Z)Z
++
++    move-result p1
++
+     const/16 v0, 0x8
+ 
+     if-eqz p1, :cond_3
+-- 
+2.56.0
+
