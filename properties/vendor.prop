@@ -51,41 +51,8 @@ ro.vendor.mtk_mvpu_support=0
 ro.vendor.mtk_slow_motion_support=1
 vendor.mtk.camera.app.fd.video=1
 
-# Camera - Nothing Camera feature overrides
-#
-# ntcam.cfg.<KEY> is read back by NTCamera through the FeatureConfig hook
-# (blob-patches/ntcam-patches/0006) and overrides the value the app resolves
-# in ProductConfig.<clinit>; the com.nothing.camera.* keys are read by the app
-# itself. The defaults quoted below are Galaxian's, read out of the app.
-#
-# Night mode exposure tuning + Super Night
-com.nothing.camera.front.supernight.ev.minus=-3
-com.nothing.camera.front.supernight.ev.minusplus=-6
-com.nothing.camera.dualbokeh.ev.minus=-2
-com.nothing.camera.dualbokeh.ev.minusplus=-4
-com.nothing.camera.singlebokeh.ev.minus=-2
-com.nothing.camera.singlebokeh.ev.minusplus=-4
-com.nothing.camera.supernight.ev.minus=-3
-com.nothing.camera.supernight.ev.minusplus=-6
-ntcam.cfg.FEATURE_CAMERA_SUPER_NIGHT_LITE=true
-ntcam.cfg.FEATURE_MEDIA_CAMERA_NIGHTSHOT_SUPPORTED=true
-ntcam.cfg.FEATURE_SUPER_NIGHT_LITE_SHOW_ANIM=true
-# Zoom. The app already allows 20x, the HAL limit is lifted in
-# extract-files.py (ntcam_max_digital_zoom).
-ntcam.cfg.FEATURE_CAMERA_MAX_ZOOM=20
-# Portrait: 3x zoom, and the 2x option in front portrait.
-ntcam.cfg.FEATURE_CAMERA_BOKEH_2X=true
-ntcam.cfg.FEATURE_CAMERA_BOKEH_MAX_ZOOM=3
-# Rear camera beauty + touch shutter. FEATURE_MEDIA_CAMERA_BEAUTYSHOT_SUPPORTED
-# is not a flag: the app reads it as the beauty algorithm name (default
-# FACE_PLUS_PLUS), so it is deliberately left alone.
-ntcam.cfg.FEATURE_MEDIA_TOUCH_SHUTTER_SUPPORTED=true
-ntcam.cfg.REAR_BEAUTY=true
-# AI moon. Galaxian's vendor already carries the moon tag, the Supermoon node
-# and the ANC model, and the app's own moon tuning mode (47), zoom threshold
-# (12), moon index threshold (300) and moon angle threshold (102) are kept.
-ntcam.cfg.FEATURE_AIMOON_SUPPORT=true
-ntcam.cfg.FEATURE_CAMERA_AI_MOON=2
+# Camera - Nothing Camera feature overrides live in
+# packages/apps/NTCamera/NTCamera.mk.
 
 # Connectivity
 persist.vendor.connsys.chipid=-1

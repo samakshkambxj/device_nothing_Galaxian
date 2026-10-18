@@ -6,6 +6,7 @@
 
 import os
 import shutil
+import sys
 
 from extract_utils.fixups_blob import (
     blob_fixup,
@@ -34,37 +35,56 @@ lib_fixups: lib_fixups_user_type = {
     'vendor.mediatek.hardware.videotelephony-v1-ndk': lib_fixup_vendor_suffix,
 }
 
+# This file lives at <root>/device/nothing/Galaxian, so the ROM source root is
+# three levels up.
+ROM_ROOT = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '..', '..', '..')
+)
+
+
 def nt_gallery_prebuilt_impl(ctx, file, file_path, *args, **kwargs):
     # The stock NTGallery is replaced wholesale by a merged build of Nothing's
-    # newer, split-APK release. The APK is pinned in proprietary-files.txt via
-    # its source hash and its post-fixup hash, so re-running extraction either
-    # keeps this exact file or regenerates it and verifies both hashes.
+    # newer, split-APK release. That prebuilt lives in its own repository
+    # (Nothing-Phone-3a-Lite/packages_apps_NTGallery), checked out at
+    # packages/apps/NTGallery.
+    #
+    # The blob is pinned in proprietary-files.txt via its source hash and its
+    # post-fixup hash, so re-running extraction either keeps this exact file or
+    # regenerates it and verifies both hashes.
     prebuilt = os.path.join(
-        ctx.module_dir, 'blob-patches/ntgallery/NTGallery.apk'
+        ROM_ROOT, 'packages', 'apps', 'NTGallery', 'NTGallery.apk'
     )
+
+    if not os.path.exists(prebuilt):
+        raise Exception(
+            f'{file}: {os.path.relpath(prebuilt, ROM_ROOT)} is missing - check '
+            'out the packages_apps_NTGallery project'
+        )
+
     shutil.copy(prebuilt, file_path)
 
 
-def ntcam_max_digital_zoom(ctx, file, file_path, *args, **kwargs):
-    # Nothing's camera app already goes up to 20x (FEATURE_CAMERA_MAX_ZOOM
-    # defaults to 20 on Galaxian), but libmtkcam_metastore.so advertises 10.0f
-    # as availableMaxDigitalZoom, so the HAL clamps the range the app offers.
-    # Rewrite the one MOVZ immediate that materialises that constant:
-    #   movz w8, #0x4120, lsl #16   (10.0f)  ->  #0x41a0  (20.0f)
-    # The byte pattern occurs exactly once in the blob; a mismatch means the
-    # vendor library changed and the constant has to be located again.
-    stock = b'\x08\x24\xa8\x52'
-    patched = b'\x08\x34\xa8\x52'
+# The NTCamera port lives in its own repository, checked out at
+# packages/apps/NTCamera.
+NTCAMERA_DIR = os.path.join(ROM_ROOT, 'packages', 'apps', 'NTCamera')
 
-    with open(file_path, 'rb+') as f:
-        data = f.read()
-        if data.count(stock) != 1:
-            raise Exception(
-                f'{file}: expected exactly one 10.0f max-digital-zoom constant, '
-                f'found {data.count(stock)}'
-            )
-        f.seek(0)
-        f.write(data.replace(stock, patched))
+
+def ntcam_max_digital_zoom(ctx, file, file_path, *args, **kwargs):
+    # The implementation lives with the rest of the port. It is imported lazily
+    # rather than at module load so that a tree without the project still runs
+    # every other fixup, and so that a missing checkout is reported by name
+    # instead of as an ImportError.
+    if not os.path.isdir(NTCAMERA_DIR):
+        raise Exception(
+            f'{os.path.relpath(NTCAMERA_DIR, ROM_ROOT)} is missing - check out '
+            'the packages_apps_NTCamera project'
+        )
+    if NTCAMERA_DIR not in sys.path:
+        sys.path.insert(0, NTCAMERA_DIR)
+
+    from ntcam_extract import ntcam_max_digital_zoom as impl
+
+    return impl(ctx, file, file_path, *args, **kwargs)
 
 
 blob_fixups: blob_fixups_user_type = {
@@ -174,7 +194,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libntcamskia.so' : blob_fixup()
         .add_needed('libnativewindow.so'),
     'system_ext/priv-app/NTCamera/NTCamera.apk': blob_fixup()
-        .apktool_patch('blob-patches/ntcam-patches'),
+        .apktool_patch(os.path.join(NTCAMERA_DIR, 'patches')),
     'system_ext/priv-app/NTGallery/NTGallery.apk': blob_fixup()
         .call(nt_gallery_prebuilt_impl),
     'system_ext/lib64/libofflineproc_jni_aidl.so': blob_fixup()

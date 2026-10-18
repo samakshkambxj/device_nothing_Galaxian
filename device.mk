@@ -120,12 +120,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
 PRODUCT_PACKAGES += \
-    MtkApuPermission
-
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/permissions/mediatek-apu-gid.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/mediatek-apu-gid.xml
-
-PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0
 
 
@@ -219,9 +213,10 @@ PRODUCT_PACKAGES += \
 # Properties
 include hardware/mediatek/configs/properties/vendor_logtag.mk
 
-# NTF
-PRODUCT_PACKAGES += \
-    nt-fwk.Galaxian
+# Nothing camera port: app patches, feature overrides, framework shims, the APU
+# GID and the Nothing camera HAL policy. Guarded with inherit-product-if-exists
+# in the project itself, so a tree without it still builds.
+$(call inherit-product-if-exists, packages/apps/NTCamera/NTCamera.mk)
 
 # Glyph
 PRODUCT_PACKAGES += \
@@ -233,8 +228,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     GalaxianParts
 
+# Kept here instead of in packages/apps/NTCamera/NTCamera.mk on purpose: the
+# boot classpath order is baked into the dexpreopt image, so this line has to
+# stay at this position in the product makefile.
+ifneq ($(wildcard packages/apps/NTCamera),)
 PRODUCT_BOOT_JARS += \
     nt-fwk.Galaxian
+endif
 
 # Media
 PRODUCT_COPY_FILES += \

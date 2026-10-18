@@ -165,7 +165,11 @@ TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_USERIMAGES_USE_F2FS := true
 
 # SELinux
+NTCAMERA_SEPOLICY := packages/apps/NTCamera/sepolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+ifneq ($(wildcard $(NTCAMERA_SEPOLICY)),)
+BOARD_VENDOR_SEPOLICY_DIRS += $(NTCAMERA_SEPOLICY)/vendor
+endif
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
@@ -173,6 +177,9 @@ include device/mediatek/sepolicy_vndr/SEPolicy.mk
 # declared before any "typeattribute <type> ..." statement that names it, and
 # the MTK vendor policy is what declares apusys_device/vpu_device/mdla_device.
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor-post
+ifneq ($(wildcard $(NTCAMERA_SEPOLICY)),)
+BOARD_VENDOR_SEPOLICY_DIRS += $(NTCAMERA_SEPOLICY)/vendor-post
+endif
 
 # Verified boot
 BOARD_AVB_ENABLE := true
@@ -219,6 +226,10 @@ DEVICE_MATRIX_FILE += $(DEVICE_PATH)/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml \
     $(DEVICE_PATH)/vintf/framework_compatibility_matrix.xml
+ifneq ($(wildcard packages/apps/NTCamera/vintf/framework_compatibility_matrix.xml),)
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    packages/apps/NTCamera/vintf/framework_compatibility_matrix.xml
+endif
 
 # WiFi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
