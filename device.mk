@@ -233,6 +233,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     GalaxianParts
 
+# Doze (ambient display, lift to wake)
+PRODUCT_PACKAGES += \
+    NothingDoze
+
 PRODUCT_BOOT_JARS += \
     nt-fwk.Galaxian
 
