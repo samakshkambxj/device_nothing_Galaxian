@@ -1,3 +1,6 @@
+# Dt2w
+vendor.touch.double_tap_to_wake    u:object_r:vendor_power_prop:s0
+
 # Camera
 vendor.camera.mdp.  u:object_r:vendor_mtk_camera_prop:s0
 
