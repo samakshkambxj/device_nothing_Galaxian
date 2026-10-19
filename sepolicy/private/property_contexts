@@ -9,3 +9,6 @@ sys.galaxianparts.tcp_ready u:object_r:galaxianparts_tcp_status_prop:s0 exact bo
 sys.galaxianparts.vm_profile u:object_r:galaxianparts_vm_request_prop:s0 exact enum stock balanced performance battery
 sys.galaxianparts.uclamp_profile u:object_r:galaxianparts_uclamp_request_prop:s0 exact enum default battery performance
 sys.galaxianparts.tuning_ready u:object_r:galaxianparts_tuning_status_prop:s0 exact bool
+
+# Written by the doze app, read by vendor_init (pocket gesture).
+sys.touch.pocket_mode u:object_r:sys_touch_prop:s0 exact int

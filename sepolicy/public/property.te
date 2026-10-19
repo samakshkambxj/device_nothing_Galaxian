@@ -1,2 +1,6 @@
 system_public_prop(galaxianparts_thermal_request_prop)
 system_restricted_prop(galaxianparts_thermal_daemon_prop)
+
+# Written by the doze app (system_app) when the device is in a pocket and read by
+# vendor_init, which forwards it to the touch driver's pocket_mode node.
+system_public_prop(sys_touch_prop)

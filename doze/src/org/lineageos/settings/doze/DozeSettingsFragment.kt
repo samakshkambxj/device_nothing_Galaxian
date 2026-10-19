@@ -70,12 +70,10 @@ class DozeSettingsFragment :
         pocketPreference?.isEnabled = dozeEnabled
         pocketPreference?.onPreferenceChangeListener = this
 
-        // Hide AOD if not supported and set all its dependents otherwise
+        // Hide AOD if not supported. The pickup and pocket gestures deliberately do
+        // not depend on it: DozeService is only started while always-on is disabled.
         if (!Utils.alwaysOnDisplayAvailable(requireContext())) {
             preferenceScreen.removePreference(alwaysOnDisplayPreference)
-        } else {
-            pickupSensorCategory.dependency = Utils.ALWAYS_ON_DISPLAY
-            proximitySensorCategory.dependency = Utils.ALWAYS_ON_DISPLAY
         }
     }
 

@@ -36,6 +36,12 @@ object Utils {
     // (2); it can still be changed in the ambient display settings.
     private const val DEFAULT_PICK_UP_TYPE = "2"
 
+    // Upstream defaults the pocket gesture to off. Pocket mode (touch suppression
+    // in a pocket, plus a pulse when the device leaves it) is a standard Nothing
+    // feature, so enable it out of the box; it can still be turned off in the
+    // ambient display settings.
+    private const val DEFAULT_POCKET_ENABLED = true
+
     private fun startService(context: Context) {
         Log.d(TAG, "Starting service")
         context.startServiceAsUser(Intent(context, DozeService::class.java), UserHandle.CURRENT)
@@ -89,8 +95,8 @@ object Utils {
         return AmbientDisplayConfiguration(context).alwaysOnAvailable()
     }
 
-    private fun isGestureEnabled(context: Context, gesture: String?): Boolean {
-        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(gesture, false)
+    private fun isGestureEnabled(context: Context, gesture: String?, defValue: Boolean): Boolean {
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(gesture, defValue)
     }
 
     fun isPickUpEnabled(context: Context): Boolean {
@@ -104,7 +110,7 @@ object Utils {
     }
 
     fun isPocketEnabled(context: Context): Boolean {
-        return isGestureEnabled(context, GESTURE_POCKET_KEY)
+        return isGestureEnabled(context, GESTURE_POCKET_KEY, DEFAULT_POCKET_ENABLED)
     }
 
     private fun areGesturesEnabled(context: Context): Boolean {

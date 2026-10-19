@@ -58,7 +58,7 @@
 
         <SwitchPreferenceCompat
             android:key="gesture_pocket"
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:icon="@drawable/ic_pocket"
             android:title="@string/pocket_gesture_title"
             android:summary="@string/pocket_gesture_summary" />

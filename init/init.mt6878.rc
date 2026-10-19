@@ -1067,3 +1067,9 @@ on property:vendor.mtk.md1.status=reset
 on property:vendor.touch.double_tap_to_wake=*
     write /proc/touchpanel/gesture_mode ${vendor.touch.double_tap_to_wake}
     write /proc/touchpanel/fts_gesture_mode ${vendor.touch.double_tap_to_wake}
+
+# Pocket mode, written by the doze app while the proximity sensor is covered.
+# Both node names exist in ft3683g.ko; only one of them is exported.
+on property:sys.touch.pocket_mode=*
+    write /proc/touchpanel/pocket_mode ${sys.touch.pocket_mode}
+    write /proc/touchpanel/fts_pocket_mode ${sys.touch.pocket_mode}

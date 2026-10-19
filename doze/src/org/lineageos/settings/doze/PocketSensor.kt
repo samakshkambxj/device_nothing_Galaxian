@@ -62,7 +62,7 @@ class PocketSensor(
 
     companion object {
         private const val TAG = "PocketSensor"
-        private const val DEBUG = false
+        private const val DEBUG = true
 
         private const val MIN_PULSE_INTERVAL_MS = 2500L
     }

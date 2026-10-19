@@ -3,3 +3,7 @@ allow system_app surfaceflinger_service:service_manager find;
 
 allow priv_app surfaceflinger:binder { call transfer };
 allow priv_app surfaceflinger_service:service_manager find;
+
+# Pocket gesture: the doze app sets sys.touch.pocket_mode, vendor_init turns it
+# into a write to the touch driver's pocket_mode node.
+set_prop(system_app, sys_touch_prop)
