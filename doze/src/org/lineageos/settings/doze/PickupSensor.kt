@@ -48,7 +48,11 @@ class PickupSensor(
                     entryTimestamp = SystemClock.elapsedRealtime()
                     if (Utils.isPickUpSetToWake(context)) {
                         wakeLock.acquire(WAKELOCK_TIMEOUT_MS)
-                        powerManager.wakeUpWithProximityCheck(
+                        // wakeUpWithProximityCheck() only exists in trees carrying the
+                        // LineageOS proximity-check patch, which this framework does not.
+                        // The check is not needed here anyway: screen_upward only reports
+                        // the wake value once the screen faces upward, i.e. not pocketed.
+                        powerManager.wakeUp(
                             SystemClock.uptimeMillis(),
                             PowerManager.WAKE_REASON_GESTURE,
                             TAG,
