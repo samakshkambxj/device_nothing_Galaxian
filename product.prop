@@ -23,5 +23,3 @@ vendor.camera.aux.packagelist=com.mediatek.camera,com.nothing.ois.cal,com.nothin
 
 # RKPD
 remote_provisioning.hostname=remoteprovisioning.googleapis.com
-remote_provisioning.tee.rkp_only=1
-remote_provisioning.strongbox.rkp_only=1
