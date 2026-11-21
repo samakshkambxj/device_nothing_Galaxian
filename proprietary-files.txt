@@ -1369,7 +1369,7 @@ system/etc/morpho_image_refiner_tuning_params.xml
 system_ext/etc/permissions/advancedSample_camera_extensions.xml
 system_ext/etc/permissions/privapp-permissions-NTCamera.xml
 system_ext/framework/androidx.camera.extensions.impl.advanced.jar
-system_ext/priv-app/NTCamera/NTCamera.apk
+system_ext/priv-app/NTCamera/NTCamera.apk;OVERRIDES=Camera2,Aperture
 vendor/etc/camera/Algomark/AJensonPro-Semibold.otf
 vendor/etc/camera/Arabicfont/NotoNaskhArabic.ttf
 vendor/etc/camera/Ndotfont/Ndot-55.otf
@@ -1579,7 +1579,7 @@ vendor/lib64/libneuron_platform.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 system/lib64/libnelib.so
 system_ext/etc/permissions/privapp-permissions-NothingExperience.xml
-system_ext/priv-app/NTGallery/NTGallery.apk|b9e2ed081fb0c4102b4d3671cda2410893c05c46|d3fb6805a266546e6ccca7fba2c43b7505d59e78
+system_ext/priv-app/NTGallery/NTGallery.apk|b9e2ed081fb0c4102b4d3671cda2410893c05c46|d3fb6805a266546e6ccca7fba2c43b7505d59e78;OVERRIDES=Glimpse,Gallery,Gallery3D,GalleryNew3D,Gallery2
 system_ext/priv-app/NothingExperience/NothingExperience.apk
 vendor/lib64/libvpu.so
 vendor/lib64/libvpu5.so
