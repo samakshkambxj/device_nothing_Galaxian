@@ -2,11 +2,13 @@
 vendor.touch.double_tap_to_wake    u:object_r:vendor_power_prop:s0
 
 # Fingerprint
+persist.vendor.noth.dump_data       u:object_r:vendor_fingerprint_prop:s0
 persist.vendor.goodix.dump_data     u:object_r:vendor_fingerprint_prop:s0
 persist.vendor.overlay.fp_algo      u:object_r:vendor_fingerprint_prop:s0
 persist.vendor.overlay.fp_model     u:object_r:vendor_fingerprint_prop:s0
-persist.vendor.overlay.fp_serial    u:object_r:vendor_fingerprint_prop:s0
 persist.vendor.overlay.fp_vendor    u:object_r:vendor_fingerprint_prop:s0
+persist.vendor.overlay.fp_serial    u:object_r:vendor_nothing_property:s0
+vendor.nothing.                     u:object_r:vendor_nothing_property:s0
 
 # TEE
 ro.vendor.trustonic.ready u:object_r:vendor_trustonic_prop:s0 exact bool
@@ -15,3 +17,7 @@ ro.vendor.trustonic.ready u:object_r:vendor_trustonic_prop:s0 exact bool
 vendor.camera.           u:object_r:vendor_camera_prop:s0
 vendor.mtk.camera.       u:object_r:vendor_camera_prop:s0
 persist.vendor.camera.   u:object_r:vendor_camera_prop:s0
+
+# NT Camera (must not overlap vendor.camera./persist.vendor.camera. prefixes above)
+vendor.picture.algo.policy.                 u:object_r:vendor_nt_camera_prop:s0
+ro.vendor.nothing.                          u:object_r:vendor_nt_camera_prop:s0
