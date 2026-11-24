@@ -55,7 +55,7 @@ $(call inherit-product, hardware/dolby/dolby.mk)
 
 # LunarisDolby
 PRODUCT_PACKAGES += \
-    LunarisDolby
+    DolbyAtmos
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
