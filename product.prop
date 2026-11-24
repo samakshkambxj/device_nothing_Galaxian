@@ -30,3 +30,5 @@ remote_provisioning.strongbox.rkp_only=1
 # zRAM
 mmd.zram.enabled=true
 mmd.zram.recompression.enabled=true
+
+ro.lunaris.maintainer=Samakshhhh
