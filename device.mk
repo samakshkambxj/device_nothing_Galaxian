@@ -191,6 +191,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.Galaga
 
+# Glyph
+PRODUCT_PACKAGES += \
+    GlyphAdapter \
+    ParanoidGlyphGalaxian \
+    init.galaxian_glyph.rc \
+    privapp_whitelist_co.aospa.glyph.xml \
+    whitelist_co.aospa.glyph.xml
+
 # Properties
 include $(DEVICE_PATH)/vendor_logtag.mk
 
